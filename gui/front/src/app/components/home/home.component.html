@@ -1,0 +1,31 @@
+
+<div *ngIf="rconData">
+  <div class="container">
+    <div class="home-map-name" style="padding-bottom: 30px">
+      <h2>Playing <strong>{{rconData.currentMap}}</strong></h2>
+    </div>
+
+    <table class="table table-dark">
+      <thead>
+      <tr>
+        <th>Name</th>
+<!--    <th>cl</th>-->
+        <th>Ping</th>
+        <th>Score</th>
+        <th>Rate</th>
+<!--     <th>address</th>-->
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let player of rconData.players">
+        <td appQ3name="{{player.name}}"></td>
+<!--    <td>{{player.cl}}</td>-->
+        <td>{{player.ping}}</td>
+        <td>{{player.score}}</td>
+        <td>{{player.rate >= 99999 ? '---' : player.rate}}</td>
+<!--    <td appQ3name="{{player.address}}"></td> -->
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

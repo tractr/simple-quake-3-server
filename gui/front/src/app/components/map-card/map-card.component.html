@@ -1,0 +1,16 @@
+<mat-card class="mb-3">
+  <mat-card-header>
+    <mat-card-title>{{map.title}}</mat-card-title>
+    <mat-card-subtitle>{{map.name}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="./assets/images/{{map.name}}.jpg" alt="{{map.title}}">
+  <mat-card-content>
+    <p *ngIf="map.description">
+      {{map.description}}
+    </p>
+    <p>Source: <em>{{map.source}}</em></p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button mat-raised-button (click)="play.next()">Play</button>
+  </mat-card-actions>
+</mat-card>
