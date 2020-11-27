@@ -1,5 +1,6 @@
 'use strict';
 
+const EventEmitter = require('events');
 import Q3RCon from 'quake3-rcon'
 import {rconConfig} from "../../config/rcon";
 
@@ -59,7 +60,7 @@ class RconServiceClass {
         return new Promise((resolve, reject) => {
             try {
                 this._validateCommand(cmd);
-                this._client.send(cmd, function(response) {
+                this._client.send(cmd, function (response) {
                     resolve(response);
                 });
             } catch (e) {
@@ -75,19 +76,19 @@ class RconServiceClass {
     }
 
     _parseStatus(rconData) {
-        let resObj = {players : []};
+        let resObj = {players: []};
         if (rconData) {
             rconData = rconData.replace(/ {2,}/g, ' ');
             const rconArr = rconData.split('\n');
             resObj.currentMap = rconArr[1].split(' ')[1];
-            for (let i = 4; i <rconArr.length ; i++) {
+            for (let i = 4; i < rconArr.length; i++) {
                 let row = rconArr[i].trim().split(' ');
                 let player = {};
-                player.cl = row.splice(0,1)[0];
-                player.score = row.splice(0,1)[0];
-                player.ping = row.splice(0,1)[0];
-                player.rate = row.splice(-1,1)[0];
-                player.address = row.splice(-1,1)[0];
+                player.cl = row.splice(0, 1)[0];
+                player.score = row.splice(0, 1)[0];
+                player.ping = row.splice(0, 1)[0];
+                player.rate = row.splice(-1, 1)[0];
+                player.address = row.splice(-1, 1)[0];
                 player.name = row.join(' ');
                 resObj.players.push(player);
             }
@@ -95,11 +96,14 @@ class RconServiceClass {
             return resObj;
         }
     }
+
     _parseServerInfo(rconData) {
         if (rconData) {
             rconData = rconData.split('\n')
                 .map(line => line.replace(/( {2,})/g, ' ').split(' '))
-                .map(line =>  { return { name : line[0], value: line.slice(1).join(' ') } })
+                .map(line => {
+                    return {name: line[0], value: line.slice(1).join(' ')}
+                })
                 .slice(2);
             return rconData;
         }

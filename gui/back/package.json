@@ -11,7 +11,7 @@
     "start": "node lib/",
     "debug": "node --inspect-brk ./lib/index.js",
     "watch": "npm-watch",
-    "dev": "nodemon --exec babel-node ./src/index.js",
+    "dev": "nodemon --exec babel-node ./src/index.js"
   },
   "engines": {
     "node": ">=6.1.0",
@@ -28,19 +28,14 @@
     "eslint": "^3.19.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.16.0",
-    "isparta": "^4.1.1",
-    "nodemon": "^1.18.10",
-    "npm-watch": "^0.6.0",
+    "npm-watch": "^0.7.0"
   },
   "dependencies": {
-    "bluebird": "latest",
     "body-parser": "^1.18.3",
     "compression": "^1.7.4",
     "cors": "^2.8.5",
     "express": "^4.16.4",
     "express-healthcheck": "^0.1.0",
-    "lodash": "latest",
-    "modern-rcon": "^1.0.3",
     "morgan": "^1.9.1",
     "quake3-rcon": "^0.2.1",
     "socket.io": "^2.2.0"

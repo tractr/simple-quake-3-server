@@ -1,4 +1,3 @@
-
 const events = ['status'];
 
 export function registerSocket(rconEvent, socket) {
@@ -12,13 +11,13 @@ export function registerSocket(rconEvent, socket) {
 
 
 function createListener(event, socket) {
-    return function(doc) {
+    return function (doc) {
         socket.emit(event, doc);
     };
 }
 
 function removeListener(rconEvent, event, listener) {
-    return function() {
+    return function () {
         rconEvent.removeListener(event, listener);
     };
 }
