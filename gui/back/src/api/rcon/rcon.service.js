@@ -112,7 +112,7 @@ class RconServiceClass {
     /** @param cmd {string} */
     _validateCommand(cmd) {
         const lower = cmd.toLowerCase();
-        if (lower.includes('sv_dlurl')) {
+        if (lower.includes('sv_dlurl') || lower.includes('password')) {
             throw new Error(`Command ${cmd} is invalid`);
         }
     }

@@ -2,22 +2,20 @@
 
 set -e
 
-# Forward SIGTERM
-_term() {
-  echo "Caught SIGTERM signal!"
-  kill -TERM "$child" 2>/dev/null
-}
-trap _term SIGTERM
+# Generate RCON password if necessary
+if [ -z "${RCON_PASSWORD}" ]; then
+  export RCON_PASSWORD=$(pwgen -n 16 -c 1)
+fi
+echo "Rcon password is: ${RCON_PASSWORD}"
+# Save password in server.cfg
+sed -i "s/default_rcon_password/${RCON_PASSWORD}/g" /home/ioq3srv/ioquake3/baseq3/server.cfg
 
+# Set download URL
+if [ -z "${FRONTEND_URL}" ]; then
+  export FRONTEND_URL="http://localhost"
+fi
+# Save URL in server.cfg
+sed -i "s|http://localhost|${FRONTEND_URL}|g" /home/ioq3srv/ioquake3/baseq3/server.cfg
 
-# Run NGINX
-#docker ps -a
-
-# Start q3 server
-/home/ioq3srv/ioquake3/ioq3ded.x86_64 +exec server.cfg &
-
-#less /var/log/nginx/access.log
-
-# Wait child
-child=$!
-wait "$child"
+# Start services
+#/usr/bin/supervisord -c /etc/supervisord.conf
