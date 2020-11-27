@@ -6,7 +6,7 @@ import morgan from 'morgan';
 import cors from 'cors';
 
 const config = {
-    port: process.env.REST_PORT || 9009,
+    port: process.env.REST_PORT || 9000,
     host: process.env.REST_addr || '127.0.0.1'
 };
 
