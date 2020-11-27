@@ -2,6 +2,8 @@ maps/images/*
 !maps/images/.gitkeep
 maps/pk3s/*
 !maps/pk3s/.gitkeep
+maps/custom.json
+maps/node_modules
 
 gui/back/node_modules
 gui/back/lib
