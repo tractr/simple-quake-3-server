@@ -44,6 +44,7 @@ RUN echo "y" | sh /tmp/build/compile.sh && \
 FROM alpine:3.12.1
 
 RUN apk add --no-cache --update nginx nodejs supervisor pwgen apache2-utils
+# Setup nginx
 RUN mkdir -p /run/nginx && chown nginx:nginx /run/nginx
 
 # Define user
@@ -58,11 +59,11 @@ COPY --chown=ioq3srv:ioq3srv --from=front-builder /app/dist /home/ioq3srv/gui/fr
 # Copy back-end
 COPY --chown=ioq3srv:ioq3srv --from=back-builder /app /home/ioq3srv/gui/back
 # Copy maps
-COPY --chown=ioq3srv:ioq3srv --from=maps /maps/pk3s /home/ioq3srv/ioquake3/baseq3/
+COPY --chown=ioq3srv:ioq3srv --from=maps /maps/pk3s /home/ioq3srv/.q3a/baseq3/
 COPY --chown=ioq3srv:ioq3srv --from=maps /maps/images /home/ioq3srv/gui/front/assets/images/
 COPY --chown=ioq3srv:ioq3srv --from=maps /maps/custom.json /home/ioq3srv/gui/back/maps/
 # Copy Q3 server config
-COPY --chown=ioq3srv:ioq3srv q3server/server.cfg /home/ioq3srv/ioquake3/baseq3/
+COPY --chown=ioq3srv:ioq3srv q3server/server.cfg /home/ioq3srv/.q3a/baseq3/
 # Config NGINX config
 COPY nginx/default.nginx /etc/nginx/conf.d/default.conf
 

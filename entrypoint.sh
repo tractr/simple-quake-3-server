@@ -10,7 +10,7 @@ if [ -z "${RCON_PASSWORD}" ]; then
 fi
 echo "Rcon password is: ${RCON_PASSWORD}"
 # Save password in server.cfg
-sed -i "s/default_rcon_password/${RCON_PASSWORD}/g" /home/ioq3srv/ioquake3/baseq3/server.cfg
+sed -i "s/default_rcon_password/${RCON_PASSWORD}/g" /home/ioq3srv/.q3a/baseq3/server.cfg
 
 #########################################################
 # Set download URL
@@ -19,7 +19,7 @@ if [ -z "${FRONTEND_URL}" ]; then
 fi
 echo "Front-end URL is: ${FRONTEND_URL}"
 # Save URL in server.cfg
-sed -i "s|http://localhost|${FRONTEND_URL}|g" /home/ioq3srv/ioquake3/baseq3/server.cfg
+sed -i "s|http://localhost|${FRONTEND_URL}|g" /home/ioq3srv/.q3a/baseq3/server.cfg
 
 #########################################################
 # Add API password

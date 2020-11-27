@@ -8,7 +8,7 @@ server {
 
   # Maps
   location /baseq3 {
-    root /home/ioq3srv/ioquake3;
+    root /home/ioq3srv/.q3a;
     sendfile           on;
     sendfile_max_chunk 1m;
 
