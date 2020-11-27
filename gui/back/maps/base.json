@@ -1,0 +1,233 @@
+[
+  {
+    "name": "q3dm1",
+    "title": "Arena Gate",
+    "source": "Orignal Quake 3 Arena",
+    "description": "",
+    "type":"dm"
+  },
+  {
+    "name": "q3dm2",
+    "title": "House of Pain",
+    "source": "Orignal Quake 3 Arena",
+    "description": "",
+    "type": "dm"
+  },
+  {
+    "name": "q3dm3",
+    "title": "Arena of Death",
+    "source": "Orignal Quake 3 Arena",
+    "description": "",
+    "type": "dm"
+  },
+  {
+    "name": "q3dm4",
+    "title": "The Place of Many Deaths",
+    "source": "Orignal Quake 3 Arena",
+    "description": "",
+    "type": "dm"
+  },
+  {
+    "name": "q3dm5",
+    "title": "The Forgotten Place",
+    "source": "Orignal Quake 3 Arena",
+    "description": "",
+    "type": "dm"
+  },
+  {
+    "name": "q3dm6",
+    "title": "The Forgotten Place",
+    "source": "Orignal Quake 3 Arena",
+    "description": "",
+    "type": "dm"
+  },
+  {
+    "name": "q3dm7",
+    "title": "Temple of Retribution",
+    "source": "Orignal Quake 3 Arena",
+    "description": "",
+    "type": "dm"
+  },
+  {
+    "name": "q3dm8",
+    "title": "Brimstone Abbey",
+    "source": "Orignal Quake 3 Arena",
+    "description": "",
+    "type": "dm"
+  },
+  {
+    "name": "q3dm9",
+    "title": "Hero's Keep",
+    "source": "Orignal Quake 3 Arena",
+    "description": "",
+    "type": "dm"
+  },
+  {
+    "name": "q3dm10",
+    "title": "The Nameless Place",
+    "source": "Orignal Quake 3 Arena",
+    "description": "",
+    "type": "dm"
+  },
+  {
+    "name": "q3dm11",
+    "title": "Deva Station",
+    "source": "Orignal Quake 3 Arena",
+    "description": "",
+    "type": "dm"
+  },
+  {
+    "name": "q3dm12",
+    "title": "The Dredwerkz",
+    "source": "Orignal Quake 3 Arena",
+    "description": "",
+    "type": "dm"
+  },
+  {
+    "name": "q3dm13",
+    "title": "Lost World",
+    "source": "Orignal Quake 3 Arena",
+    "description": "",
+    "type": "dm"
+  },
+  {
+    "name": "q3dm14",
+    "title": "Grim Dungeons",
+    "source": "Orignal Quake 3 Arena",
+    "description": "",
+    "type": "dm"
+  },
+  {
+    "name": "q3dm15",
+    "title": "Demon Keep",
+    "source": "Orignal Quake 3 Arena",
+    "description": "",
+    "type": "dm"
+  },
+  {
+    "name": "q3dm16",
+    "title": "The Bouncy Map",
+    "source": "Orignal Quake 3 Arena",
+    "description": "",
+    "type": "dm"
+  },
+  {
+    "name": "q3dm17",
+    "title": "The Longest Yard",
+    "source": "Orignal Quake 3 Arena",
+    "description": "",
+    "type": "dm"
+  },
+  {
+    "name": "q3dm18",
+    "title": " Space Chamber",
+    "source": "Orignal Quake 3 Arena",
+    "description": "",
+    "type": "dm"
+  },
+  {
+    "name": "q3dm19",
+    "title": "Apocalypse Void",
+    "source": "Orignal Quake 3 Arena",
+    "description": "",
+    "type": "dm"
+  },
+  {
+    "name": "q3tourney1",
+    "title": "Powerstation 0218",
+    "source": "Orignal Quake 3 Arena",
+    "description": "",
+    "type": "dm"
+  },
+  {
+    "name": "q3tourney2",
+    "title": "The Proving Grounds",
+    "source": "Orignal Quake 3 Arena",
+    "description": "",
+    "type": "dm"
+  },
+  {
+    "name": "q3tourney3",
+    "title": "Hell's Gate",
+    "source": "Orignal Quake 3 Arena",
+    "description": "",
+    "type": "dm"
+  },
+  {
+    "name": "q3tourney4",
+    "title": "Vertical Vengeance",
+    "source": "Orignal Quake 3 Arena",
+    "description": "",
+    "type": "dm"
+  },
+  {
+    "name": "q3tourney5",
+    "title": "Fatal Instinct",
+    "source": "Orignal Quake 3 Arena",
+    "description": "",
+    "type": "dm"
+  },
+  {
+    "name": "q3tourney6",
+    "title": "The Very End of You",
+    "source": "Orignal Quake 3 Arena",
+    "description": "",
+    "type": "dm"
+  },
+  {
+    "name": "q3ctf1",
+    "title": "Dueling Keeps",
+    "source": "Orignal Quake 3 Arena",
+    "description": "",
+    "type": "ctf"
+  },
+  {
+    "name": "q3ctf2",
+    "title": "Troubled Waters",
+    "source": "Orignal Quake 3 Arena",
+    "description": "",
+    "type": "ctf"
+  },
+  {
+    "name": "q3ctf3",
+    "title": "The Stronghold",
+    "source": "Orignal Quake 3 Arena",
+    "description": "",
+    "type": "ctf"
+  },
+  {
+    "name": "q3ctf4",
+    "title": "Space CTF",
+    "source": "Orignal Quake 3 Arena",
+    "description": "",
+    "type": "ctf"
+  },
+  {
+    "name": "pro-q3dm6",
+    "title": "The Campgrounds II",
+    "source": "Id Software, Inc.",
+    "description": "",
+    "type": "dm"
+  },
+  {
+    "name": "pro-q3dm13",
+    "title": "Lost World II",
+    "source": "Id Software, Inc.",
+    "description": "",
+    "type": "dm"
+  },
+  {
+    "name": "pro-q3tourney2",
+    "title": "The Proving Grounds II",
+    "source": "Id Software, Inc.",
+    "description": "",
+    "type": "dm"
+  },
+  {
+    "name": "pro-q3tourney4",
+    "title": "Vertical Vengeance II",
+    "source": "Id Software, Inc.",
+    "description": "",
+    "type": "dm"
+  }
+]
