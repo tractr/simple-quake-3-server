@@ -1,0 +1,15 @@
+{
+  "name": "maps",
+  "version": "1.0.0",
+  "description": "",
+  "main": "get-maps.js",
+  "scripts": {
+    "start": "node get-maps.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.0",
+    "mkdirp": "^1.0.4"
+  }
+}

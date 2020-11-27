@@ -3,7 +3,10 @@ FROM cirrusci/wget:latest as pak0
 RUN wget https://github.com/nrempel/q3-server/raw/master/baseq3/pak0.pk3
 
 # Step 2: Fetch custom maps
-
+FROM node:10-alpine as front-builder
+ADD maps /maps
+WORKDIR /maps
+RUN npm i && npm start
 
 # Step 3: Build GUI front-end
 FROM node:10-alpine as front-builder
