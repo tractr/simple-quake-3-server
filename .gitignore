@@ -4,3 +4,4 @@ maps/images/*
 !maps/images/.gitkeep
 maps/pk3s/*
 !maps/pk3s/.gitkeep
+maps/custom.json

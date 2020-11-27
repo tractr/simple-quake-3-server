@@ -472,6 +472,7 @@ const Axios = require('axios');
 const Path = require('path');
 const Fs = require('fs');
 const MkdirP = require('mkdirp');
+const Sharp = require('sharp');
 
 async function download(url, path) {
     console.log(`  -> download ${url}`);
@@ -513,12 +514,18 @@ async function run() {
         }
 
         // save image
-        // const imageExt = Path.extname(item.image);
-        // const imageName = imageExt.length ? `${item.name}${imageExt}` : `${item.name}.jpg`;
+        const imageExt = Path.extname(item.image);
+        const imageTempName = imageExt.length ? `temp_${item.name}${imageExt}` : `temp_${item.name}.jpg`;
+        const imageTempPath = Path.resolve(imagesPath, imageTempName);
         const imageName = `${item.name}.jpg`; // Force JPG ext
         const imagePath = Path.resolve(imagesPath, imageName);
         if (!Fs.existsSync(imagePath)) {
-            await download(item.image, imagePath);
+            await download(item.image, imageTempPath);
+            await Sharp(imageTempPath)
+                .resize(500)
+                .jpeg()
+                .toFile(imagePath);
+            Fs.unlinkSync(imageTempPath);
         }
 
         // Push new element

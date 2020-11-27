@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.0",
-    "mkdirp": "^1.0.4"
+    "mkdirp": "^1.0.4",
+    "sharp": "^0.26.3"
   }
 }
