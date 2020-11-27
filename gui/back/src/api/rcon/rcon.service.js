@@ -24,7 +24,7 @@ class RconServiceClass {
     }
 
     serverInfo() {
-        this._send('serverinfo')
+        return this._send('serverinfo')
             .then(data => this._parseServerInfo(data));
     }
 
