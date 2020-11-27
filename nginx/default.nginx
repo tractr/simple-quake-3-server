@@ -24,6 +24,8 @@ server {
   # API
   location /api {
     proxy_pass http://api;
+#REMOVE_FOR_BASIC_AUTH    auth_basic "Quake 3 server administrators";
+#REMOVE_FOR_BASIC_AUTH    auth_basic_user_file /etc/nginx/.htpasswd;
   }
 
   # WebApp

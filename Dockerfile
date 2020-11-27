@@ -43,7 +43,7 @@ RUN echo "y" | sh /tmp/build/compile.sh && \
 # Cloned from jberrenberg/quake3:1.1
 FROM alpine:3.12.1
 
-RUN apk add --no-cache --update nginx nodejs supervisor pwgen
+RUN apk add --no-cache --update nginx nodejs supervisor pwgen apache2-utils
 RUN mkdir -p /run/nginx && chown nginx:nginx /run/nginx
 
 # Define user
@@ -69,10 +69,9 @@ COPY nginx/default.nginx /etc/nginx/conf.d/default.conf
 # Export ports
 EXPOSE 27960/udp
 EXPOSE 8080
-EXPOSE 8443
 
 # Set entrypoint
-COPY --chown=ioq3srv:ioq3srv entrypoint.sh /entrypoint.sh
-COPY --chown=ioq3srv:ioq3srv supervisord.conf /etc/supervisord.conf
+COPY entrypoint.sh /entrypoint.sh
+COPY supervisord.conf /etc/supervisord.conf
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
