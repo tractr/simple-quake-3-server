@@ -21,7 +21,8 @@ import {
   MatButtonModule,
   MatInputModule,
   MatTableModule,
-  MatListModule
+  MatListModule,
+  MatSelectModule
 } from '@angular/material';
 import {MatCardModule} from '@angular/material/card';
 
@@ -55,6 +56,7 @@ const socketIoConfig: SocketIoConfig = { url: environment.apiBaseUrl, options: {
     MatButtonModule,
     MatIconModule,
     MatCardModule,
+    MatSelectModule,
     FormsModule,
     ReactiveFormsModule,
     SocketIoModule.forRoot(socketIoConfig)

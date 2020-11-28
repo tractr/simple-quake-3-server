@@ -32,8 +32,6 @@ export class MapsService {
   // }
 
   setMap(name: string) {
-    this.httpClient.post(`${this.apiURL}/`, {setMap: name}).subscribe(() => {
-      // Success
-    });
+    this.httpClient.post(`${this.apiURL}/`, {setMap: name}).subscribe();
   }
 }
