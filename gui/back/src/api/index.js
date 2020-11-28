@@ -17,7 +17,7 @@ export default function (app) {
     app.use('/api/rcon', rconRoutes);
     app.use('/api/maps', mapsRoutes);
 
-    app.use('/healthcheck', expressHealthCheck());
+    app.use('/api/healthcheck', expressHealthCheck());
 
     // All other routes should redirect to the index.html
     app.route('/*').get(errors[404]);

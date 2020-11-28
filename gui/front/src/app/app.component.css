@@ -1,16 +1,12 @@
-.example-container {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+mat-sidenav-container {
+  height: 100%;
 }
-
+i {
+  width: 24px;
+}
 .app-central-pic {
   text-align:center;
-  margin-top: 30px;
-  margin-bottom: 50px;
-
+  max-width: 400px;
 }
 p {
   font-family: Lato;

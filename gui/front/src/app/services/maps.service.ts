@@ -10,7 +10,7 @@ import {environment} from "../../environments/environment";
 })
 export class MapsService {
 
-  apiURL = `${environment.apiBaseUrl}/maps`;
+  apiURL = `${environment.apiBaseUrl}${environment.apiBasePath}/maps`;
 
   constructor(
     private httpClient: HttpClient,
@@ -32,6 +32,8 @@ export class MapsService {
   // }
 
   setMap(name: string) {
-    this.httpClient.post(`${this.apiURL}/`, {setMap: name}).subscribe(console.log);
+    this.httpClient.post(`${this.apiURL}/`, {setMap: name}).subscribe(() => {
+      // Success
+    });
   }
 }

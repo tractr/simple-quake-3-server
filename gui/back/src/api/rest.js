@@ -13,7 +13,7 @@ export default function runServer() {
     restConfigurator(app);
     routes(app);
 
-    const io = socketio(server);
+    const io = socketio(server, { path: '/api/socket.io' });
     io.on('connection', function (socket) {
         registerSocket(RconService.getEmitter(), socket)
     });

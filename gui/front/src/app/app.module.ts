@@ -28,8 +28,9 @@ import {MatCardModule} from '@angular/material/card';
 import { DownloadComponent } from './components/download/download.component';
 import { MapComponent } from './components/map/map.component';
 import { MapCardComponent } from './components/map-card/map-card.component';
+import {environment} from "../environments/environment";
 
-const socketIoConfig: SocketIoConfig = { url: `/`, options: {} };
+const socketIoConfig: SocketIoConfig = { url: environment.apiBaseUrl, options: { path: environment.socketIoPath } };
 
 @NgModule({
   declarations: [

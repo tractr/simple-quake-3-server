@@ -11,7 +11,7 @@ import {environment} from "../../environments/environment";
   providedIn: 'root'
 })
 export class RconService {
-  apiURL = `${environment.apiBaseUrl}/rcon`;
+  apiURL = `${environment.apiBaseUrl}${environment.apiBasePath}/rcon`;
 
   constructor(
     private httpClient: HttpClient,
