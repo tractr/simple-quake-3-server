@@ -43,7 +43,7 @@ RUN echo "y" | sh /tmp/build/compile.sh && \
 # Cloned from jberrenberg/quake3:1.1
 FROM alpine:3.12.1
 
-RUN apk add --no-cache --update nginx nodejs supervisor pwgen apache2-utils
+RUN apk add --no-cache --update nginx nodejs supervisor pwgen apache2-utils bash
 # Setup nginx
 RUN mkdir -p /run/nginx && chown nginx:nginx /run/nginx
 

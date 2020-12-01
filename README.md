@@ -80,6 +80,36 @@ For more information about RCON server:
 - https://www.quakearea.com/site/index.php/all-articles/15-tips-and-tricks/59-quake-server-commands
 - http://www.joz3d.net/html/q3console.html
 
+### Other environment variables
+
+#### Quake 3 server's name
+
+`SERVER_NAME`: Default `Quakr`.
+
+#### Quake 3 server's welcome message
+
+`SERVER_MOTD`: Default `Welcome to a Simple Quake 3 Server`.
+
+#### Bot skills
+
+`BOT_SKILLS`: `1` to `5`. Default `3`.
+
+#### Min players (filled with bots)
+
+`MIN_PLAYERS`: Default `3`.
+
+#### Max connected clients
+
+`MAX_CLIENTS`: Default `24`.
+
+#### Match time limit
+
+`TIME_LIMIT`: Default `10`.
+
+#### Match frag limit
+
+`FRAG_LIMIT`: Default `20`.
+
 ## Play the game
 
 This section helps you to install and configure Quake 3 on your machine.

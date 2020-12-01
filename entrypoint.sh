@@ -1,25 +1,51 @@
-#!/bin/sh
+#!/bin/bash
 
 set -e
 
 #########################################################
-# Generate RCON password if necessary
-if [ -z "${RCON_PASSWORD}" ]; then
-  RCON_PASSWORD=$(pwgen -n 16 -c 1)
-  export RCON_PASSWORD
-fi
-echo "Rcon password is: ${RCON_PASSWORD}"
-# Save password in server.cfg
-sed -i "s/default_rcon_password/${RCON_PASSWORD}/g" /home/ioq3srv/.q3a/baseq3/server.cfg
+# Configure server from envs
+i=0
+VARS[$i]="RCON_PASSWORD"
+DEFAULT_VALUES[$i]=$(pwgen -n 16 -c 1)
+i=$((i+1))
+VARS[$i]="FRONTEND_URL"
+DEFAULT_VALUES[$i]="http://localhost"
+i=$((i+1))
+VARS[$i]="SERVER_NAME"
+DEFAULT_VALUES[$i]="Quakr"
+i=$((i+1))
+VARS[$i]="SERVER_MOTD"
+DEFAULT_VALUES[$i]="Welcome to a Simple Quake 3 Server"
+i=$((i+1))
+VARS[$i]="BOT_SKILLS"
+DEFAULT_VALUES[$i]="3"
+i=$((i+1))
+VARS[$i]="MIN_PLAYERS"
+DEFAULT_VALUES[$i]="3"
+i=$((i+1))
+VARS[$i]="MAX_CLIENTS"
+DEFAULT_VALUES[$i]="24"
+i=$((i+1))
+VARS[$i]="TIME_LIMIT"
+DEFAULT_VALUES[$i]="10"
+i=$((i+1))
+VARS[$i]="FRAG_LIMIT"
+DEFAULT_VALUES[$i]="20"
+i=$((i+1))
 
-#########################################################
-# Set download URL
-if [ -z "${FRONTEND_URL}" ]; then
-  export FRONTEND_URL="http://localhost"
-fi
-echo "Front-end URL is: ${FRONTEND_URL}"
-# Save URL in server.cfg
-sed -i "s|http://localhost|${FRONTEND_URL}|g" /home/ioq3srv/.q3a/baseq3/server.cfg
+len=${#VARS[@]}
+for (( j=0; j<len; j++ )); do
+   key=${VARS[$j]}
+   if [ -z "${!key}" ]; then
+    eval "${key}=\"${DEFAULT_VALUES[$j]}\""
+   fi
+   echo "${key}=${!key}"
+   sed -i "s|{${key}}|${!key}|g" /home/ioq3srv/.q3a/baseq3/server.cfg
+done
+
+# Export global variables
+export RCON_PASSWORD
+export FRONTEND_URL
 
 #########################################################
 # Add API password
