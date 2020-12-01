@@ -15,6 +15,8 @@ export class HomeComponent implements OnInit, OnDestroy {
   botLevel = 3;
   minPlayers = 3;
   minPlayersValues = Array(13).fill(0).map((x, i) => i);
+  botsCount = 0;
+  onlinePlayersCount = 0;
   private unsubscribe = new Subject<void>();
 
   constructor(private rcon: RconService) { }
@@ -22,6 +24,8 @@ export class HomeComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.rcon.getStatus().pipe(takeUntil(this.unsubscribe)).subscribe(res => {
       this.rconData = res;
+      this.botsCount = res.players.filter(p => p.address === '^7bot').length;
+      this.onlinePlayersCount = res.players.length - this.botsCount
     });
     this.rcon.getServerInfo().pipe(takeUntil(this.unsubscribe)).subscribe(res => {
       const minPlayers = res.find(r => r.name === 'bot_minplayers');
