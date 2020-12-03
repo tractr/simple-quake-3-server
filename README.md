@@ -97,6 +97,8 @@ For more information about RCON server:
 First, you have to create a bot on Slack: https://api.slack.com/bot-users
 Then, use variables `SLACK_TOKEN` and  `SLACK_CHANNEL` to setup Slack.
 
+Don't forget to invite the bot on the channel.
+
 #### Other environment variables
 
 ##### Quake 3 server's name
