@@ -12,7 +12,7 @@ const SettableVariables = [
 	'capturelimit',
 	'timelimit',
 	'g_gametype',
-	'mapname'
+	'mapname',
 ];
 
 class RconServiceClass {

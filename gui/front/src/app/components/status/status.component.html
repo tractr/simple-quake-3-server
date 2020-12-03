@@ -43,31 +43,34 @@
 				</button>
 			</mat-header-cell>
 			<mat-cell *matCellDef="let row">
-        <div *ngIf="settableVariables.includes(row.currentData.name)" class="d-flex justify-content-between">
-          <button
-            *ngIf="!row.editing"
-            mat-icon-button
-            color="primary"
-            (click)="row.startEdit()"
-          >
-            <i class="material-icons">edit</i>
-          </button>
-          <button
-            *ngIf="row.editing"
-            mat-icon-button
-            color="primary"
-            (click)="row.confirmEditCreate()"
-          >
-            <i class="material-icons">check</i>
-          </button>
-          <button
-            mat-icon-button
-            color="primary"
-            (click)="row.cancelOrDelete()"
-          >
-            <i class="material-icons">clear</i>
-          </button>
-        </div>
+				<div
+					*ngIf="settableVariables.includes(row.currentData.name)"
+					class="d-flex justify-content-between"
+				>
+					<button
+						*ngIf="!row.editing"
+						mat-icon-button
+						color="primary"
+						(click)="row.startEdit()"
+					>
+						<i class="material-icons">edit</i>
+					</button>
+					<button
+						*ngIf="row.editing"
+						mat-icon-button
+						color="primary"
+						(click)="row.confirmEditCreate()"
+					>
+						<i class="material-icons">check</i>
+					</button>
+					<button
+						mat-icon-button
+						color="primary"
+						(click)="row.cancelOrDelete()"
+					>
+						<i class="material-icons">clear</i>
+					</button>
+				</div>
 			</mat-cell>
 		</ng-container>
 

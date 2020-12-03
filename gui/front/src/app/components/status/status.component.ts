@@ -1,10 +1,16 @@
-import {Component, EventEmitter, OnDestroy, OnInit, Output,} from '@angular/core';
-import {TableDataSource, ValidatorService} from 'angular4-material-table';
-import {RconService} from '../../services/rcon.service';
-import {RconServerInfo} from '../../interfaces/serverinfo.rcon';
-import {RconServerInfoValidatorService} from '../../services/rcon-server-info-validator.service';
-import {takeUntil} from 'rxjs/operators';
-import {Subject} from 'rxjs';
+import {
+	Component,
+	EventEmitter,
+	OnDestroy,
+	OnInit,
+	Output,
+} from '@angular/core';
+import { TableDataSource, ValidatorService } from 'angular4-material-table';
+import { RconService } from '../../services/rcon.service';
+import { RconServerInfo } from '../../interfaces/serverinfo.rcon';
+import { RconServerInfoValidatorService } from '../../services/rcon-server-info-validator.service';
+import { takeUntil } from 'rxjs/operators';
+import { Subject } from 'rxjs';
 
 @Component({
 	selector: 'app-status',
@@ -28,7 +34,7 @@ export class StatusComponent implements OnInit, OnDestroy {
 		private rcon: RconService,
 		private RconServerInfoValidator: ValidatorService
 	) {
-	  this.settableVariables = this.rcon.getSettableVariables();
+		this.settableVariables = this.rcon.getSettableVariables();
 		this.RconServerInfoListChange.subscribe((data: RconServerInfo[]) => {
 			// Update values one by one
 			if (this.currentServerInfo) {

@@ -30,25 +30,25 @@ export class RconService {
 	}
 
 	public setVar(q3Var: string, value?: string) {
-	  // Avoid errors on forbidden vars
-	  if (!this.getSettableVariables().includes(q3Var)) {
-	    return;
-    }
+		// Avoid errors on forbidden vars
+		if (!this.getSettableVariables().includes(q3Var)) {
+			return;
+		}
 		this.httpClient
 			.post<string>(`${this.apiURL}/setVar`, { q3Var, value })
 			.subscribe();
 	}
 
 	public getSettableVariables(): string[] {
-    // Keep this sync with gui/back/src/api/rcon/rcon.service.js
-	  return [
-      'g_spskill',
-      'bot_minplayers',
-      'fraglimit',
-      'capturelimit',
-      'timelimit',
-      'g_gametype',
-      'mapname'
-    ];
-  }
+		// Keep this sync with gui/back/src/api/rcon/rcon.service.js
+		return [
+			'g_spskill',
+			'bot_minplayers',
+			'fraglimit',
+			'capturelimit',
+			'timelimit',
+			'g_gametype',
+			'mapname',
+		];
+	}
 }
