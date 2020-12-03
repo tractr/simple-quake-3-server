@@ -20,6 +20,8 @@ class RconServiceClass {
 		this._client = new Q3RCon(rconConfig);
 		/** @type {EventEmitter} */
 		this._emitter = new EventEmitter();
+		/** @type {string[]} */
+		this._currentPlayers = [];
 		this._registerEvents();
 	}
 
@@ -28,7 +30,25 @@ class RconServiceClass {
 	}
 
 	status() {
-		return this._send('status').then((data) => this._parseStatus(data));
+		return this._send('status')
+			.then((data) => this._parseStatus(data))
+			.then((list) => {
+
+				// Extract real player names
+				const players = list.players
+					.filter(p => p.address !== '^7bot')
+					.map(p => p.name);
+				// Guess new players
+				for(const player of players) {
+					if (player.length && !this._currentPlayers.includes(player)) {
+						this._emitter.emit('newPlayer', player);
+					}
+				}
+				// Update player list
+				this._currentPlayers = players;
+
+				return list;
+			});
 	}
 
 	serverInfo() {

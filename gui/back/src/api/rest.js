@@ -6,6 +6,7 @@ import { default as restConfigurator, config } from '../config/express';
 import routes from './index';
 import { registerSocket } from './socket';
 import { RconService } from './rcon/rcon.service';
+import {SlackService} from "./rcon/slack.service";
 
 export default function runServer() {
 	let app = express();
@@ -17,6 +18,7 @@ export default function runServer() {
 	io.on('connection', function (socket) {
 		registerSocket(RconService.getEmitter(), socket);
 	});
+	SlackService.listen();
 
 	server.listen(config.port, config.ip, function () {
 		process.stdout.write(

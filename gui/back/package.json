@@ -37,6 +37,7 @@
 		"cors": "^2.8.5",
 		"express": "^4.16.4",
 		"express-healthcheck": "^0.1.0",
+		"messaging-api-slack": "^1.0.3",
 		"morgan": "^1.9.1",
 		"quake3-rcon": "^0.2.1",
 		"socket.io": "^2.2.0"
