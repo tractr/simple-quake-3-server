@@ -1,10 +1,12 @@
 mat-sidenav-container {
-  height: 100%;
+	height: 100%;
 }
+
 i {
-  width: 24px;
+	width: 24px;
 }
+
 .app-central-pic {
-  text-align:center;
-  max-width: 400px;
+	text-align: center;
+	max-width: 400px;
 }

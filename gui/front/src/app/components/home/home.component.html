@@ -1,73 +1,80 @@
-
 <div *ngIf="rconData">
-  <div class="container mb-5">
-    <div class="home-map-name" style="padding-bottom: 30px">
-      <h2>Playing <strong>{{rconData.currentMap}}</strong></h2>
-    </div>
+	<div class="container mb-5">
+		<div class="home-map-name" style="padding-bottom: 30px">
+			<h2>
+				Playing <strong>{{ rconData.currentMap }}</strong>
+			</h2>
+		</div>
 
-    <div class="row mb-5">
-      <div class="col-12 text-center">
-        <p>
-          <strong>Online Players: {{ onlinePlayersCount }}</strong>
-        </p>
-        <p>
-          <span>Bots: {{ botsCount }}</span>
-        </p>
-      </div>
-      <div class="col-12 col-sm-6">
-      </div>
-    </div>
+		<div class="row mb-5">
+			<div class="col-12 text-center">
+				<p>
+					<strong>Online Players: {{ onlinePlayersCount }}</strong>
+				</p>
+				<p>
+					<span>Bots: {{ botsCount }}</span>
+				</p>
+			</div>
+			<div class="col-12 col-sm-6"></div>
+		</div>
 
-    <table class="table table-dark">
-      <thead>
-      <tr>
-        <th>Name</th>
-<!--    <th>cl</th>-->
-        <th>Ping</th>
-        <th>Score</th>
-        <th>Rate</th>
-<!--     <th>address</th>-->
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let player of rconData.players">
-        <td appQ3name="{{player.name}}"></td>
-<!--    <td>{{player.cl}}</td>-->
-        <td>{{player.ping}}</td>
-        <td>{{player.score}}</td>
-        <td>{{player.rate >= 99999 ? '---' : player.rate}}</td>
-<!--    <td appQ3name="{{player.address}}"></td> -->
-      </tr>
-      </tbody>
-    </table>
-  </div>
+		<table class="table table-dark">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<!--    <th>cl</th>-->
+					<th>Ping</th>
+					<th>Score</th>
+					<th>Rate</th>
+					<!--     <th>address</th>-->
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let player of rconData.players">
+					<td appQ3name="{{ player.name }}"></td>
+					<!--    <td>{{player.cl}}</td>-->
+					<td>{{ player.ping }}</td>
+					<td>{{ player.score }}</td>
+					<td>{{ player.rate >= 99999 ? '---' : player.rate }}</td>
+					<!--    <td appQ3name="{{player.address}}"></td> -->
+				</tr>
+			</tbody>
+		</table>
+	</div>
 
-  <div class="container mb-5">
-    <h2 class="mb-3">Bots</h2>
-    <div class="row">
-      <div class="col-12 col-md-6">
-        <mat-form-field>
-          <mat-label>Min players</mat-label>
-          <mat-select [(ngModel)]="minPlayers" (ngModelChange)="onMinPlayersChanged()">
-            <mat-option *ngFor="let number of minPlayersValues" [value]="number">{{ number }}</mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-      <div class="col-12 col-md-6">
-        <mat-form-field>
-          <mat-label>Level</mat-label>
-          <mat-select [(ngModel)]="botLevel" (ngModelChange)="onBotLevelChanged()">
-            <mat-option [value]="1">I Can Win</mat-option>
-            <mat-option [value]="2">Bring It On</mat-option>
-            <mat-option [value]="3">Hurt Me Plenty</mat-option>
-            <mat-option [value]="4">Hardcore</mat-option>
-            <mat-option [value]="5">Nightmare!</mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-    </div>
-  </div>
-
+	<div class="container mb-5">
+		<h2 class="mb-3">Bots</h2>
+		<div class="row">
+			<div class="col-12 col-md-6">
+				<mat-form-field>
+					<mat-label>Min players</mat-label>
+					<mat-select
+						[(ngModel)]="minPlayers"
+						(ngModelChange)="onMinPlayersChanged()"
+					>
+						<mat-option
+							*ngFor="let number of minPlayersValues"
+							[value]="number"
+							>{{ number }}</mat-option
+						>
+					</mat-select>
+				</mat-form-field>
+			</div>
+			<div class="col-12 col-md-6">
+				<mat-form-field>
+					<mat-label>Level</mat-label>
+					<mat-select
+						[(ngModel)]="botLevel"
+						(ngModelChange)="onBotLevelChanged()"
+					>
+						<mat-option [value]="1">I Can Win</mat-option>
+						<mat-option [value]="2">Bring It On</mat-option>
+						<mat-option [value]="3">Hurt Me Plenty</mat-option>
+						<mat-option [value]="4">Hardcore</mat-option>
+						<mat-option [value]="5">Nightmare!</mat-option>
+					</mat-select>
+				</mat-form-field>
+			</div>
+		</div>
+	</div>
 </div>
-
-

@@ -1,40 +1,81 @@
 <div class="container">
-  <mat-table class="table-margin-bottom" #table [dataSource]="dataSource">
-    <ng-container matColumnDef="name">
-      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
-      <mat-cell *matCellDef="let row">
-        <mat-form-field floatLabel="{{ row.editing ? 'float' : 'never'}}">
-          <input matInput [formControl]="row.validator.controls['name']" [readonly]="!row.editing" placeholder="Name" [(ngModel)]="row.currentData.name">
-        </mat-form-field>
-      </mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="value">
-      <mat-header-cell *matHeaderCellDef> value </mat-header-cell>
-      <mat-cell *matCellDef="let row">
-        <mat-form-field floatLabel="{{ row.editing ? 'float' : 'never'}}">
-          <input matInput [formControl]="row.validator.controls['value']" type="text" placeholder="value" [(ngModel)]="row.currentData.value">
-        </mat-form-field>
-      </mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="actionsColumn">
-      <mat-header-cell *matHeaderCellDef>
-        <button mat-icon-button color="accent" (click)="dataSource.createNew()"><i class="material-icons">add</i></button>
-      </mat-header-cell>
-      <mat-cell *matCellDef="let row">
-        <button *ngIf="!row.editing" mat-icon-button color="primary" focusable="false" (click)="row.startEdit()">
-          <i class="material-icons">edit</i>
-        </button>
-        <button *ngIf="row.editing" mat-icon-button color="primary" focusable="false" (click)="row.confirmEditCreate()">
-          <i class="material-icons">check</i>
-        </button>
-        <button mat-icon-button color="primary" focusable="false" (click)="row.cancelOrDelete()">
-          <i class="material-icons">clear</i>
-        </button>
-      </mat-cell>
-    </ng-container>
+	<mat-table class="table-margin-bottom" #table [dataSource]="dataSource">
+		<ng-container matColumnDef="name">
+			<mat-header-cell *matHeaderCellDef> Name</mat-header-cell>
+			<mat-cell *matCellDef="let row">
+				<mat-form-field
+					floatLabel="{{ row.editing ? 'float' : 'never' }}"
+				>
+					<input
+						matInput
+						[formControl]="row.validator.controls['name']"
+						[readonly]="!row.editing"
+						placeholder="Name"
+						[(ngModel)]="row.currentData.name"
+					/>
+				</mat-form-field>
+			</mat-cell>
+		</ng-container>
+		<ng-container matColumnDef="value">
+			<mat-header-cell *matHeaderCellDef> value</mat-header-cell>
+			<mat-cell *matCellDef="let row">
+				<mat-form-field
+					floatLabel="{{ row.editing ? 'float' : 'never' }}"
+				>
+					<input
+						matInput
+						[formControl]="row.validator.controls['value']"
+						type="text"
+						placeholder="value"
+						[(ngModel)]="row.currentData.value"
+					/>
+				</mat-form-field>
+			</mat-cell>
+		</ng-container>
+		<ng-container matColumnDef="actionsColumn">
+			<mat-header-cell *matHeaderCellDef>
+				<button
+					mat-icon-button
+					color="accent"
+					(click)="dataSource.createNew()"
+				>
+					<i class="material-icons">add</i>
+				</button>
+			</mat-header-cell>
+			<mat-cell *matCellDef="let row">
+				<div
+					*ngIf="settableVariables.includes(row.currentData.name)"
+					class="d-flex justify-content-between"
+				>
+					<button
+						*ngIf="!row.editing"
+						mat-icon-button
+						color="primary"
+						(click)="row.startEdit()"
+					>
+						<i class="material-icons">edit</i>
+					</button>
+					<button
+						*ngIf="row.editing"
+						mat-icon-button
+						color="primary"
+						(click)="row.confirmEditCreate()"
+					>
+						<i class="material-icons">check</i>
+					</button>
+					<button
+						mat-icon-button
+						color="primary"
+						(click)="row.cancelOrDelete()"
+					>
+						<i class="material-icons">clear</i>
+					</button>
+				</div>
+			</mat-cell>
+		</ng-container>
 
-    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-  </mat-table>
+		<mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+		<mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+	</mat-table>
 </div>
 <br />

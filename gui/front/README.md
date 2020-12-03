@@ -1,5 +1,7 @@
 # Q3RconWebUI
+
 ## Frontend for [QUAKE3 Server w/ WebUI](https://github.com/kalik1/q3-server-docker-webUI)
+
 Quake 3 Frontend w/ websocket for interacting with [q3-server-docker-rest-api](https://github.com/kalik1/q3-server-docker-rest-api).
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.4.
@@ -27,4 +29,3 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-

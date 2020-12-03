@@ -3,10 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
-  apiBaseUrl: 'http://localhost',
-  apiBasePath: '/api',
-  socketIoPath: '/api/socket.io'
+	production: false,
+	apiBaseUrl: 'http://localhost',
+	apiBasePath: '/api',
+	socketIoPath: '/api/socket.io',
 };
 
 /*
