@@ -10,6 +10,7 @@ RUN npm i && npm start
 
 # Step 3: Build GUI front-end
 FROM node:10-alpine as front-builder
+RUN apk --no-cache add git
 ADD gui/front /app
 WORKDIR /app
 RUN npm ci && \

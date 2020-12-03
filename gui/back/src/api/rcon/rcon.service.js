@@ -4,6 +4,17 @@ const EventEmitter = require('events');
 import Q3RCon from 'quake3-rcon';
 import { rconConfig } from '../../config/rcon';
 
+// Keep this sync with gui/front/src/app/services/rcon.service.ts
+const SettableVariables = [
+	'g_spskill',
+	'bot_minplayers',
+	'fraglimit',
+	'capturelimit',
+	'timelimit',
+	'g_gametype',
+	'mapname'
+];
+
 class RconServiceClass {
 	constructor() {
 		this._client = new Q3RCon(rconConfig);
@@ -27,8 +38,9 @@ class RconServiceClass {
 	}
 
 	setVar(variable, value) {
+		this._validateVariable(variable);
 		let cmd = `set ${variable}`;
-		cmd = value ? `${cmd} ${value}` : cmd;
+		cmd = value ? `${cmd} ${this._cleanValue(value)}` : cmd;
 		return this._send(cmd).then((data) => this._parseServerInfo(data));
 	}
 
@@ -112,6 +124,21 @@ class RconServiceClass {
 		if (lower.includes('sv_dlurl') || lower.includes('password')) {
 			throw new Error(`Command ${cmd} is invalid`);
 		}
+	}
+
+	/** @param variable {string} */
+	_validateVariable(variable) {
+		if (!SettableVariables.includes(variable)) {
+			throw new Error(`Variable ${variable} is not settable`);
+		}
+	}
+
+	/**
+	 * @param value {string}
+	 * @return {string}
+	 */
+	_cleanValue(value) {
+		return value.replace(/[^a-zA-Z0-9_-]/g, '');
 	}
 }
 
