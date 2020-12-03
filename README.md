@@ -57,6 +57,23 @@ docker run \
   tractr/simple-quake-3-server
 ```
 
+### Game password
+
+If you want to restrict access to the game server, you can use `PASSWORD` variable.
+
+```shell script
+docker run \
+  -it \
+  --name q3server \
+  -p 27960:27960/udp \
+  -p 80:8080 \
+  -e FRONTEND_URL=http://quake.example.com \
+  -e PASSWORD=mypassword \
+  tractr/simple-quake-3-server
+```
+
+In Quake III, before you can connect to the server, you'll have to pull the console down and type: `/password "mypassword"`
+
 ### RCON server password
 
 When you start the server, a random password is generated for the RCON server.
@@ -79,6 +96,7 @@ For more information about RCON server:
 
 - https://www.quakearea.com/site/index.php/all-articles/15-tips-and-tricks/59-quake-server-commands
 - http://www.joz3d.net/html/q3console.html
+- http://manual.freeshell.org/lokigames/quake3arena-Help/DedicatedServer.html
 
 ### Other environment variables
 

@@ -3,6 +3,12 @@
 set -e
 
 #########################################################
+# Need password ?
+if [ -n "${PASSWORD}" ]; then
+  NEED_PASSWORD=1
+fi
+
+#########################################################
 # Configure server from envs
 i=0
 VARS[$i]="RCON_PASSWORD"
@@ -10,6 +16,12 @@ DEFAULT_VALUES[$i]=$(pwgen -n 16 -c 1)
 i=$((i+1))
 VARS[$i]="FRONTEND_URL"
 DEFAULT_VALUES[$i]="http://localhost"
+i=$((i+1))
+VARS[$i]="NEED_PASSWORD"
+DEFAULT_VALUES[$i]="0"
+i=$((i+1))
+VARS[$i]="PASSWORD"
+DEFAULT_VALUES[$i]=""
 i=$((i+1))
 VARS[$i]="SERVER_NAME"
 DEFAULT_VALUES[$i]="Quakr"
