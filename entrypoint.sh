@@ -44,6 +44,9 @@ i=$((i+1))
 VARS[$i]="FRAG_LIMIT"
 DEFAULT_VALUES[$i]="20"
 i=$((i+1))
+VARS[$i]="CAPTURE_LIMIT"
+DEFAULT_VALUES[$i]="8"
+i=$((i+1))
 
 len=${#VARS[@]}
 for (( j=0; j<len; j++ )); do
@@ -58,6 +61,7 @@ done
 # Export global variables
 export RCON_PASSWORD
 export FRONTEND_URL
+export SERVER_NAME
 
 #########################################################
 # Add API password
