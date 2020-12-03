@@ -1,17 +1,15 @@
-
 .mat-input-element:disabled {
-  color: rgb(187, 187, 187);
+	color: rgb(187, 187, 187);
 }
 
-
 :host /deep/ .mat-select-disabled .mat-select-value-text {
-  color: rgb(187, 187, 187) !important;
+	color: rgb(187, 187, 187) !important;
 }
 
 :host /deep/ .mat-form-field-disabled .mat-form-field-underline {
-  background-image: none !important;
+	background-image: none !important;
 }
 
 .mat-column-actionsColumn {
-  flex: 0 0 100px;
+	flex: 0 0 100px;
 }

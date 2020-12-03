@@ -1,44 +1,37 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
 <mat-sidenav-container>
-  <mat-sidenav #drawer mode="side" opened role="navigation">
-    <mat-nav-list>
+	<mat-sidenav #drawer mode="side" opened role="navigation">
+		<mat-nav-list>
+			<div class="text-center d-none d-sm-inline p-3">
+				<img width="200px" src="./assets/quake-3-icon.png" />
+			</div>
+			<a mat-list-item routerLink="/">
+				<i class="material-icons">home</i>
+				<span class="ml-2 d-none d-sm-inline">Home</span>
+			</a>
 
-      <div class="text-center d-none d-sm-inline p-3">
-        <img width="200px" src="./assets/quake-3-icon.png">
-      </div>
-       <a mat-list-item routerLink='/'>
-         <i class="material-icons">home</i>
-         <span class="ml-2 d-none d-sm-inline">Home</span>
-       </a>
+			<a mat-list-item routerLink="/map">
+				<i class="material-icons">map</i>
+				<span class="ml-2 d-none d-sm-inline">Map</span>
+			</a>
 
-      <a mat-list-item routerLink='/map'>
-        <i class="material-icons">map</i>
-        <span class="ml-2 d-none d-sm-inline">Map</span>
-      </a>
+			<a mat-list-item routerLink="/status">
+				<i class="material-icons">code</i>
+				<span class="ml-2 d-none d-sm-inline">Server Info</span>
+			</a>
 
-      <a mat-list-item routerLink='/status'>
-        <i class="material-icons">code</i>
-        <span class="ml-2 d-none d-sm-inline">Server Info</span>
-      </a>
-
-      <a mat-list-item routerLink='/download'>
-        <i class="material-icons">arrow_downward</i>
-        <span class="ml-2 d-none d-sm-inline">Download client</span>
-      </a>
-
-    </mat-nav-list>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <div class="text-center mt-5">
-      <h1 class="mb-4">Quake III Server</h1>
-      <img class="mb-4 w-100 app-central-pic" [src]="mapSrc">
-    </div>
-    <router-outlet></router-outlet>
-  </mat-sidenav-content>
+			<a mat-list-item routerLink="/download">
+				<i class="material-icons">arrow_downward</i>
+				<span class="ml-2 d-none d-sm-inline">Download client</span>
+			</a>
+		</mat-nav-list>
+	</mat-sidenav>
+	<mat-sidenav-content>
+		<div class="text-center mt-5">
+			<h1 class="mb-4">Quake III Server</h1>
+			<img class="mb-4 w-100 app-central-pic" [src]="mapSrc" />
+		</div>
+		<router-outlet></router-outlet>
+	</mat-sidenav-content>
 </mat-sidenav-container>
-
-
-
-
-
