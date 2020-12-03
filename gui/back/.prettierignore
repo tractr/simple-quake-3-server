@@ -1,3 +1,2 @@
-dist
-vendor
-utils/scaffolds
+lib
+node_modules
