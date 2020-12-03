@@ -6,7 +6,7 @@ import { default as restConfigurator, config } from '../config/express';
 import routes from './index';
 import { registerSocket } from './socket';
 import { RconService } from './rcon/rcon.service';
-import {SlackService} from "./rcon/slack.service";
+import { SlackService } from './rcon/slack.service';
 
 export default function runServer() {
 	let app = express();

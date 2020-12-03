@@ -33,14 +33,16 @@ class RconServiceClass {
 		return this._send('status')
 			.then((data) => this._parseStatus(data))
 			.then((list) => {
-
 				// Extract real player names
 				const players = list.players
-					.filter(p => p.address !== '^7bot')
-					.map(p => p.name);
+					.filter((p) => p.address !== '^7bot')
+					.map((p) => p.name);
 				// Guess new players
-				for(const player of players) {
-					if (player.length && !this._currentPlayers.includes(player)) {
+				for (const player of players) {
+					if (
+						player.length &&
+						!this._currentPlayers.includes(player)
+					) {
 						this._emitter.emit('newPlayer', player);
 					}
 				}

@@ -2,7 +2,7 @@
 
 import { SlackOAuthClient } from 'messaging-api-slack';
 import { slackConfig } from '../../config/slack';
-import {RconService} from "./rcon.service";
+import { RconService } from './rcon.service';
 
 class SlackServiceClass {
 	constructor() {
@@ -11,14 +11,18 @@ class SlackServiceClass {
 
 	listen() {
 		if (slackConfig.enabled) {
-			this._slack = new SlackOAuthClient({ accessToken: slackConfig.token });
+			this._slack = new SlackOAuthClient({
+				accessToken: slackConfig.token,
+			});
 			this._registerEvents();
 		}
 	}
 
 	_registerEvents() {
 		this._rcon.getEmitter().on('newPlayer', (player) => {
-			this._send(`*${player}* has connected to ${slackConfig.serverName}`);
+			this._send(
+				`*${player}* has connected to ${slackConfig.serverName}`
+			);
 		});
 		this._send(`Server *${slackConfig.serverName}* is online!`);
 	}
@@ -26,9 +30,14 @@ class SlackServiceClass {
 	/** @param {string} message */
 	_send(message) {
 		this._slack
-			.callMethod('chat.postMessage', { channel: slackConfig.channel, text: message })
-			.catch(error => {
-				console.error(`Cannot send message to Slack: ${error.toString()}`);
+			.callMethod('chat.postMessage', {
+				channel: slackConfig.channel,
+				text: message,
+			})
+			.catch((error) => {
+				console.error(
+					`Cannot send message to Slack: ${error.toString()}`
+				);
 			});
 	}
 }
