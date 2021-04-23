@@ -66,6 +66,8 @@ docker run \
   -e CAPTURE_LIMIT=8 \
   -e SLACK_TOKEN=XXXXXXXXXXXXXX \
   -e SLACK_CHANNEL=ABCDEABCDC \
+  -e DISCORD_TOKEN=XXXXXXXXXXXXXX \
+  -e DISCORD_CHANNEL=ABCDEABCDC \
   tractr/simple-quake-3-server
 ```
 
@@ -98,6 +100,13 @@ First, you have to create a bot on Slack: https://api.slack.com/bot-users
 Then, use variables `SLACK_TOKEN` and  `SLACK_CHANNEL` to setup Slack.
 
 Don't forget to invite the bot on the channel.
+
+#### Get notifications on Discord
+
+First, you have to create a bot on Discord: https://www.writebots.com/discord-bot-token/
+Then, use variables `DISCORD_TOKEN` and  `DISCORD_CHANNEL` to setup Discord.
+
+You must use a text channel.
 
 #### Other environment variables
 
