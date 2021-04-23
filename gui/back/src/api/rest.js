@@ -7,6 +7,7 @@ import routes from './index';
 import { registerSocket } from './socket';
 import { RconService } from './rcon/rcon.service';
 import { SlackService } from './rcon/slack.service';
+import { DiscordService } from './rcon/discord.service';
 
 export default function runServer() {
 	let app = express();
@@ -19,6 +20,7 @@ export default function runServer() {
 		registerSocket(RconService.getEmitter(), socket);
 	});
 	SlackService.listen();
+	DiscordService.listen();
 
 	server.listen(config.port, config.ip, function () {
 		process.stdout.write(
