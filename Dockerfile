@@ -32,12 +32,17 @@ FROM alpine:3.12.1 as ioquake-builder
 # INSTALL DEPENDENCIES
 RUN apk --no-cache add curl g++ gcc git make && mkdir -p /tmp/build
 # FETCH INSTALLATION FILES
-RUN curl https://raw.githubusercontent.com/ioquake/ioq3/master/misc/linux/server_compile.sh -o /tmp/build/compile.sh && \
-  curl https://ioquake3.org/data/quake3-latest-pk3s.zip --referer https://ioquake3.org/extras/patch-data/ -o /tmp/build/quake3-latest-pk3s.zip
+RUN curl https://raw.githubusercontent.com/ioquake/ioq3/master/misc/linux/server_compile.sh -o /tmp/build/compile.sh
+RUN curl 'https://files.matchlessgaming.com/misc/quake3-latest-pk3s.zip' \
+      -H 'Upgrade-Insecure-Requests: 1' \
+      -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36' \
+      --compressed \
+      -o /tmp/build/quake3-latest-pk3s.zip
 # NOW THE INSTALLATION
-RUN echo "y" | sh /tmp/build/compile.sh && \
-  unzip /tmp/build/quake3-latest-pk3s.zip -d /tmp/build/ && \
-  cp -r /tmp/build/quake3-latest-pk3s/* ~/ioquake3
+RUN echo "y" | sh /tmp/build/compile.sh
+RUN ls -la /tmp/build/quake3-latest-pk3s.zip
+RUN unzip /tmp/build/quake3-latest-pk3s.zip -d /tmp/build/
+RUN cp -r /tmp/build/quake3-latest-pk3s/* ~/ioquake3
 
 ######################################
 # Step 6: Build final image
