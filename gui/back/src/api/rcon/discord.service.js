@@ -12,10 +12,13 @@ class DiscordServiceClass {
 	listen() {
 		if (discordConfig.enabled) {
 			this._discord = new Client();
-			this._discord.login(discordConfig.token)
+			this._discord
+				.login(discordConfig.token)
 				.then(() => {
 					/** @type {TextChannel} */
-					this._channel = this._discord.channels.cache.get(discordConfig.channel);
+					this._channel = this._discord.channels.cache.get(
+						discordConfig.channel
+					);
 					if (!this._channel.isText()) {
 						throw new Error('Must be a text channel');
 					}
@@ -40,12 +43,11 @@ class DiscordServiceClass {
 
 	/** @param {string} message */
 	_send(message) {
-		this._channel.send(message)
-			.catch((error) => {
-				console.error(
-					`Cannot send message to Discord: ${error.toString()}`
-				);
-			});
+		this._channel.send(message).catch((error) => {
+			console.error(
+				`Cannot send message to Discord: ${error.toString()}`
+			);
+		});
 	}
 }
 
