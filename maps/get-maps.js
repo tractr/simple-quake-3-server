@@ -5,6 +5,46 @@
 // ###############################################################
 const mapsList = [
     {
+        name: "chaosdungeons",
+        title: "Chaos Dungeons",
+        type: "dm",
+        map: "https://files.lvlworld.com/get.php/a-f/chaosdungeons/6b772b97396e85022359708200e770f6",
+        image: "https://lvlworld.com/levels/chaosdungeons/chaosdungeonslg.jpg",
+        source: "Nihil"
+    },
+    {
+        name: "chaosdungeons2",
+        title: "Gate to Hell",
+        type: "dm",
+        map: "https://files.lvlworld.com/get.php/a-f/chaosdungeons2/b8d138ef88bb36e00186100e2c6fb282",
+        image: "https://lvlworld.com/levels/chaosdungeons2/chaosdungeons2800x600.jpg",
+        source: "Nihil"
+    },
+    {
+        name: "q3ndm3",
+        title: "Cadavre's domain",
+        type: "dm",
+        map: "https://files.lvlworld.com/get.php/m-r/q3ndm3/efca649866bd771bdb10fee5bb0a1aae",
+        image: "https://lvlworld.com/levels/q3ndm3/q3ndm3lg.jpg",
+        source: "Nihil"
+    },
+    {
+        name: "13arena",
+        title: "Lost Arena",
+        type: "dm",
+        map: "http://sst13.de/map-13arena.pk3",
+        image: "https://lvlworld.com/levels/map-13arena/map-13arena800x600.jpg",
+        source: "SST13"
+    },
+    {
+        name: "13house",
+        title: "House Of Chthon",
+        type: "dm",
+        map: "http://sst13.de/map-13house.pk3",
+        image: "https://lvlworld.com/levels/map-13house/map-13house800x600.jpg",
+        source: "SST13"
+    },
+    {
         name: "13tokay",
         title: "Tokay Arena",
         type: "dm",
@@ -89,6 +129,14 @@ const mapsList = [
         title: "The Lost Yard",
         type: "dm",
         map: "http://sst13.de/map-13yard.pk3",
+        image: "http://sst13.de/pics/yard1.jpg",
+        source: "SST13"
+    },
+    {
+        name: "13yard_xt",
+        title: "The Lost Yard - Extended",
+        type: "dm",
+        map: "http://sst13.de/map-13yard_xt.pk3",
         image: "http://sst13.de/pics/yard1.jpg",
         source: "SST13"
     },
