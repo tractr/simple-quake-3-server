@@ -8,7 +8,7 @@ const mapsList = [
         name: "chaosdungeons",
         title: "Chaos Dungeons",
         type: "dm",
-        map: "https://files.lvlworld.com/get.php/a-f/chaosdungeons/6b772b97396e85022359708200e770f6",
+        map: "http://fr.ws.q3df.org/maps/downloads/chaosdungeons.pk3",
         image: "https://lvlworld.com/levels/chaosdungeons/chaosdungeonslg.jpg",
         source: "Nihil"
     },
@@ -16,7 +16,7 @@ const mapsList = [
         name: "chaosdungeons2",
         title: "Gate to Hell",
         type: "dm",
-        map: "https://files.lvlworld.com/get.php/a-f/chaosdungeons2/b8d138ef88bb36e00186100e2c6fb282",
+        map: "http://fr.ws.q3df.org/maps/downloads/chaosdungeons2.pk3",
         image: "https://lvlworld.com/levels/chaosdungeons2/chaosdungeons2800x600.jpg",
         source: "Nihil"
     },
@@ -24,7 +24,7 @@ const mapsList = [
         name: "q3ndm3",
         title: "Cadavre's domain",
         type: "dm",
-        map: "https://files.lvlworld.com/get.php/m-r/q3ndm3/efca649866bd771bdb10fee5bb0a1aae",
+        map: "http://fr.ws.q3df.org/maps/downloads/q3ndm3.pk3",
         image: "https://lvlworld.com/levels/q3ndm3/q3ndm3lg.jpg",
         source: "Nihil"
     },
