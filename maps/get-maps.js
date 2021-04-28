@@ -5,10 +5,58 @@
 // ###############################################################
 const mapsList = [
     {
+        name: "obs3dm3v2",
+        title: "The Vomitorium (v2)",
+        type: "dm",
+        map: "https://quake3-maps.s3.amazonaws.com/obs3dm3v2.pk3",
+        image: "https://lvlworld.com/levels/obs3dm3v2/obs3dm3v2800x600.jpg",
+        source: "Obsessed"
+    },
+    {
+        name: "rcq3dm1",
+        title: "A Glasswork Fishbowl",
+        type: "dm",
+        map: "http://fr.ws.q3df.org/maps/downloads/rcq3dm1.pk3",
+        image: "https://lvlworld.com/levels/rcq3dm1/rcq3dm1lg.jpg",
+        source: "Redchurch"
+    },
+    {
+        name: "q3fig",
+        title: "Final Inspiration",
+        type: "dm",
+        map: "https://quake3-maps.s3.amazonaws.com/q3fig.pk3",
+        image: "https://lvlworld.com/levels/q3fig/q3fig800x600.jpg",
+        source: "Gooball"
+    },
+    {
+        name: "q3tbdm3",
+        title: "Pit and the Pendulum",
+        type: "dm",
+        map: "http://fr.ws.q3df.org/maps/downloads/q3tbdm3.pk3",
+        image: "https://lvlworld.com/levels/q3tbdm3/q3tbdm3lg.jpg",
+        source: "Kodiak"
+    },
+    {
+        name: "q3tbdm4lg",
+        title: "Lost Forever",
+        type: "dm",
+        map: "http://fr.ws.q3df.org/maps/downloads/q3tbdm4.pk3",
+        image: "https://lvlworld.com/levels/q3tbdm4/q3tbdm4lg.jpg",
+        source: "Kodiak"
+    },
+    {
+        name: "storm3tourney6",
+        title: "Halls of the Damned",
+        type: "dm",
+        map: "http://fr.ws.q3df.org/maps/downloads/storm3tourney6.pk3",
+        image: "https://lvlworld.com/levels/storm3tourney6/storm3tourney6800x600.jpg",
+        source: "StormShadow"
+    },
+    {
         name: "chaosdungeons",
         title: "Chaos Dungeons",
         type: "dm",
-        map: "https://files.lvlworld.com/get.php/a-f/chaosdungeons/6b772b97396e85022359708200e770f6",
+        map: "http://fr.ws.q3df.org/maps/downloads/chaosdungeons.pk3",
         image: "https://lvlworld.com/levels/chaosdungeons/chaosdungeonslg.jpg",
         source: "Nihil"
     },
@@ -16,7 +64,7 @@ const mapsList = [
         name: "chaosdungeons2",
         title: "Gate to Hell",
         type: "dm",
-        map: "https://files.lvlworld.com/get.php/a-f/chaosdungeons2/b8d138ef88bb36e00186100e2c6fb282",
+        map: "http://fr.ws.q3df.org/maps/downloads/chaosdungeons2.pk3",
         image: "https://lvlworld.com/levels/chaosdungeons2/chaosdungeons2800x600.jpg",
         source: "Nihil"
     },
@@ -24,7 +72,7 @@ const mapsList = [
         name: "q3ndm3",
         title: "Cadavre's domain",
         type: "dm",
-        map: "https://files.lvlworld.com/get.php/m-r/q3ndm3/efca649866bd771bdb10fee5bb0a1aae",
+        map: "http://fr.ws.q3df.org/maps/downloads/q3ndm3.pk3",
         image: "https://lvlworld.com/levels/q3ndm3/q3ndm3lg.jpg",
         source: "Nihil"
     },
@@ -529,7 +577,7 @@ async function download(url, path) {
     const response = await Axios({
         url,
         method: 'GET',
-        responseType: 'stream'
+        responseType: 'stream',
     });
 
     response.data.pipe(writer);
