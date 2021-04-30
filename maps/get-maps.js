@@ -5,10 +5,104 @@
 // ###############################################################
 const mapsList = [
     {
+        name: "17t6remix",
+        title: "The Very End of The Longest Yard",
+        type: "dm",
+        map: "http://ws.q3df.org/maps/downloads/17t6remix.pk3",
+        image: "http://ws.q3df.org/images/levelshots/512x384/17t6remix.jpg",
+        source: "DIXOFT"
+    },
+    {
+        name: "tig_den",
+        title: "Tig's Den",
+        type: "dm",
+        map: "http://ws.q3df.org/maps/downloads/tig_den.pk3",
+        image: "http://ws.q3df.org/images/levelshots/512x384/tig_den.jpg",
+        source: "Tigger-oN"
+    },
+    {
+        name: "q3rev",
+        title: "Revelation",
+        type: "dm",
+        map: "http://ws.q3df.org/maps/downloads/q3rev.pk3",
+        image: "http://ws.q3df.org/images/levelshots/512x384/q3rev.jpg",
+        source: "Darren Lafreniere"
+    },
+    {
+        name: "phantq3dm6_mc",
+        title: "Geotechnic",
+        type: "dm",
+        map: "https://quake3-maps.s3.amazonaws.com/phantq3dm6_mc.pk3",
+        image: "https://lvlworld.com/levels/phantq3dm6_mc/phantq3dm6_mclg.jpg",
+        source: "Phantazm11"
+    },
+    {
+        name: "phantq3dm4",
+        title: "Windsong Keep",
+        type: "dm",
+        map: "https://quake3-maps.s3.amazonaws.com/phantq3dm4.pk3",
+        image: "https://lvlworld.com/levels/phantq3dm4/phantq3dm4lg.jpg",
+        source: "Phantazm11"
+    },
+    {
+        name: "phantq3dm3_rev",
+        title: "Corrosion",
+        type: "dm",
+        map: "http://ws.q3df.org/maps/downloads/phantq3dm3_rev.pk3",
+        image: "https://lvlworld.com/levels/phantq3dm3_rev/phantq3dm3_revlg.jpg",
+        source: "Phantazm11"
+    },
+    {
+        name: "kaos",
+        title: "Khaooohs",
+        type: "dm",
+        map: "https://quake3-maps.s3.amazonaws.com/kaos.pk3",
+        image: "https://lvlworld.com/levels/kaos/kaoslg.jpg",
+        source: "Vondur"
+    },
+    {
+        name: "bedlam",
+        title: "Bedlam",
+        type: "dm",
+        map: "http://ws.q3df.org/maps/downloads/bedlam.pk3",
+        image: "http://ws.q3df.org/images/levelshots/512x384/bedlam.jpg",
+        source: "The Partisan"
+    },
+    {
+        name: "obs3dm7",
+        title: "The Killing Machine for Q3A",
+        type: "dm",
+        map: "https://quake3-maps.s3.amazonaws.com/obs3dm7.pk3",
+        image: "https://lvlworld.com/levels/obs3dm7/obs3dm7800x600.jpg",
+        source: "Obsessed"
+    },
+    {
+        name: "obs3dm5",
+        title: "Time To Kill The Pain",
+        type: "dm",
+        map: "https://quake3-maps.s3.amazonaws.com/obs3dm5.pk3",
+        image: "https://lvlworld.com/levels/obs3dm5/obs3dm5800x600.jpg",
+        source: "Obsessed"
+    },
+    {
+        name: "obs3dm4",
+        title: "Chronophagia",
+        type: "dm",
+        map: "https://quake3-maps.s3.amazonaws.com/obs3dm4.pk3",
+        image: "https://lvlworld.com/levels/obs3dm4/obs3dm4800x600.jpg",
+        source: "Obsessed"
+    },
+    {
         name: "obs3dm3v2",
         title: "The Vomitorium (v2)",
         type: "dm",
         map: "https://quake3-maps.s3.amazonaws.com/obs3dm3v2.pk3",
+        extra: [
+            {
+                url: "https://quake3-maps.s3.amazonaws.com/z_obs3dm3v2.pk3",
+                filename: "z_obs3dm3v2.pk3"
+            }
+        ],
         image: "https://lvlworld.com/levels/obs3dm3v2/obs3dm3v2800x600.jpg",
         source: "Obsessed"
     },
@@ -16,8 +110,8 @@ const mapsList = [
         name: "rcq3dm1",
         title: "A Glasswork Fishbowl",
         type: "dm",
-        map: "http://fr.ws.q3df.org/maps/downloads/rcq3dm1.pk3",
-        image: "https://lvlworld.com/levels/rcq3dm1/rcq3dm1lg.jpg",
+        map: "http://ws.q3df.org/maps/downloads/rcq3dm1.pk3",
+        image: "http://ws.q3df.org/images/levelshots/512x384/rcq3dm1.jpg",
         source: "Redchurch"
     },
     {
@@ -32,48 +126,48 @@ const mapsList = [
         name: "q3tbdm3",
         title: "Pit and the Pendulum",
         type: "dm",
-        map: "http://fr.ws.q3df.org/maps/downloads/q3tbdm3.pk3",
-        image: "https://lvlworld.com/levels/q3tbdm3/q3tbdm3lg.jpg",
+        map: "http://ws.q3df.org/maps/downloads/q3tbdm3.pk3",
+        image: "http://ws.q3df.org/images/levelshots/512x384/q3tbdm3.jpg",
         source: "Kodiak"
     },
     {
-        name: "q3tbdm4lg",
+        name: "q3tbdm4",
         title: "Lost Forever",
         type: "dm",
-        map: "http://fr.ws.q3df.org/maps/downloads/q3tbdm4.pk3",
-        image: "https://lvlworld.com/levels/q3tbdm4/q3tbdm4lg.jpg",
+        map: "http://ws.q3df.org/maps/downloads/q3tbdm4.pk3",
+        image: "http://ws.q3df.org/images/levelshots/512x384/q3tbdm4.jpg",
         source: "Kodiak"
     },
     {
         name: "storm3tourney6",
         title: "Halls of the Damned",
         type: "dm",
-        map: "http://fr.ws.q3df.org/maps/downloads/storm3tourney6.pk3",
-        image: "https://lvlworld.com/levels/storm3tourney6/storm3tourney6800x600.jpg",
+        map: "http://ws.q3df.org/maps/downloads/storm3tourney6.pk3",
+        image: "http://ws.q3df.org/images/levelshots/512x384/storm3tourney6.jpg",
         source: "StormShadow"
     },
     {
         name: "chaosdungeons",
         title: "Chaos Dungeons",
         type: "dm",
-        map: "http://fr.ws.q3df.org/maps/downloads/chaosdungeons.pk3",
-        image: "https://lvlworld.com/levels/chaosdungeons/chaosdungeonslg.jpg",
+        map: "http://ws.q3df.org/maps/downloads/chaosdungeons.pk3",
+        image: "http://ws.q3df.org/images/levelshots/512x384/chaosdungeons.jpg",
         source: "Nihil"
     },
     {
         name: "chaosdungeons2",
         title: "Gate to Hell",
         type: "dm",
-        map: "http://fr.ws.q3df.org/maps/downloads/chaosdungeons2.pk3",
-        image: "https://lvlworld.com/levels/chaosdungeons2/chaosdungeons2800x600.jpg",
+        map: "http://ws.q3df.org/maps/downloads/chaosdungeons2.pk3",
+        image: "http://ws.q3df.org/images/levelshots/512x384/chaosdungeons2.jpg",
         source: "Nihil"
     },
     {
         name: "q3ndm3",
         title: "Cadavre's domain",
         type: "dm",
-        map: "http://fr.ws.q3df.org/maps/downloads/q3ndm3.pk3",
-        image: "https://lvlworld.com/levels/q3ndm3/q3ndm3lg.jpg",
+        map: "http://ws.q3df.org/maps/downloads/q3ndm3.pk3",
+        image: "http://ws.q3df.org/images/levelshots/512x384/q3ndm3.jpg",
         source: "Nihil"
     },
     {
@@ -607,6 +701,17 @@ async function run() {
         if (!Fs.existsSync(pk3Path)) {
             await download(item.map, pk3Path);
             counter++;
+        }
+
+        // save extra files
+        if (item.extra) {
+            for(const extra of item.extra) {
+                const pk3Path = Path.resolve(pk3sPath, extra.filename);
+                if (!Fs.existsSync(pk3Path)) {
+                    await download(extra.url, pk3Path);
+                    counter++;
+                }
+            }
         }
 
         // save image
