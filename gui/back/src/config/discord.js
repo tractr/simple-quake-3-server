@@ -1,12 +1,12 @@
-const { DISCORD_TOKEN, DISCORD_CHANNEL, SERVER_NAME } = process.env;
+const { DISCORD_TOKEN, DISCORD_WEBHOOK, SERVER_NAME } = process.env;
 export const discordConfig = {
 	enabled: !!(
 		DISCORD_TOKEN &&
 		DISCORD_TOKEN.length &&
-		DISCORD_CHANNEL &&
-		DISCORD_CHANNEL.length
+		DISCORD_WEBHOOK &&
+		DISCORD_WEBHOOK.length
 	),
 	token: DISCORD_TOKEN,
-	channel: DISCORD_CHANNEL,
+	id: DISCORD_WEBHOOK,
 	serverName: SERVER_NAME,
 };
