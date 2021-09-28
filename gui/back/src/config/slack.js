@@ -1,11 +1,12 @@
+const { SLACK_TOKEN, SLACK_CHANNEL, SERVER_NAME } = process.env;
 export const slackConfig = {
 	enabled: !!(
-		process.env.SLACK_TOKEN &&
-		process.env.SLACK_TOKEN.length &&
-		process.env.SLACK_CHANNEL &&
-		process.env.SLACK_CHANNEL.length
+		SLACK_TOKEN &&
+		SLACK_TOKEN.length &&
+		SLACK_CHANNEL &&
+		SLACK_CHANNEL.length
 	),
-	token: process.env.SLACK_TOKEN,
-	channel: process.env.SLACK_CHANNEL,
-	serverName: process.env.SERVER_NAME,
+	token: SLACK_TOKEN,
+	channel: SLACK_CHANNEL,
+	serverName: SERVER_NAME,
 };
