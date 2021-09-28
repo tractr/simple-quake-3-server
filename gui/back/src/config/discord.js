@@ -1,11 +1,12 @@
+const { DISCORD_TOKEN, DISCORD_CHANNEL, SERVER_NAME } = process.env;
 export const discordConfig = {
 	enabled: !!(
-		process.env.DISCORD_TOKEN &&
-		process.env.DISCORD_TOKEN.length &&
-		process.env.DISCORD_CHANNEL &&
-		process.env.DISCORD_CHANNEL.length
+		DISCORD_TOKEN &&
+		DISCORD_TOKEN.length &&
+		DISCORD_CHANNEL &&
+		DISCORD_CHANNEL.length
 	),
-	token: process.env.DISCORD_TOKEN,
-	channel: process.env.DISCORD_CHANNEL,
-	serverName: process.env.SERVER_NAME,
+	token: DISCORD_TOKEN,
+	channel: DISCORD_CHANNEL,
+	serverName: SERVER_NAME,
 };

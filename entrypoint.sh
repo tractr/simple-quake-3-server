@@ -3,6 +3,28 @@
 set -e
 
 #########################################################
+# Helpers
+function build_map_sequence() {
+  IFS=', ' read -r -a maps <<< "$1"
+  maps_count=${#maps[@]}
+  bloc="
+# Maps
+"
+  for index in "${!maps[@]}"
+  do
+      map=${maps[index]}
+      current_index=$((index+1))
+      next_index=$(((current_index%maps_count)+1))
+      bloc="${bloc}set d${current_index} \"map ${map} ; set nextmap vstr d${next_index}\"
+"
+  done
+  bloc="${bloc}vstr d1
+"
+  echo "${bloc}"
+}
+
+
+#########################################################
 # Need password ?
 if [ -n "${PASSWORD}" ]; then
   NEED_PASSWORD=1
@@ -57,6 +79,17 @@ for (( j=0; j<len; j++ )); do
    echo "${key}=${!key}"
    sed -i "s|{${key}}|${!key}|g" /home/ioq3srv/.q3a/baseq3/server.cfg
 done
+
+# Add map list
+DEFAULT_MAPS_LIST="overkill,13place,q3dm17,pro-q3tourney2,13tomb,pro-q3dm6,pro-q3dm13,eadm6"
+if [ -z "${MAPS_LIST}" ]; then
+    MAPS_LIST="${DEFAULT_MAPS_LIST}"
+fi
+MAPS_SEQUENCE=$(build_map_sequence $MAPS_LIST)
+echo "MAPS_SEQUENCE:
+${MAPS_SEQUENCE}
+"
+echo "${MAPS_SEQUENCE}" >> /home/ioq3srv/.q3a/baseq3/server.cfg
 
 # Export global variables
 export RCON_PASSWORD
