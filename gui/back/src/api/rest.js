@@ -8,7 +8,7 @@ import { registerSocket } from './socket';
 import { RconService } from './rcon/rcon.service';
 import { SlackService } from './rcon/slack.service';
 import { DiscordService } from './rcon/discord.service';
-import {ConsoleService} from "./rcon/console.service";
+import { ConsoleService } from './rcon/console.service';
 
 export default function runServer() {
 	let app = express();

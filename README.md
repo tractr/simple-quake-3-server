@@ -68,7 +68,7 @@ docker run \
   -e SLACK_TOKEN=XXXXXXXXXXXXXX \
   -e SLACK_CHANNEL=ABCDEABCDC \
   -e DISCORD_TOKEN=XXXXXXXXXXXXXX \
-  -e DISCORD_CHANNEL=ABCDEABCDC \
+  -e DISCORD_WEBHOOK=ABCDEABCDC \
   tractr/simple-quake-3-server
 ```
 
@@ -110,8 +110,9 @@ Don't forget to invite the bot on the channel.
 
 #### Get notifications on Discord
 
-First, you have to create a bot on Discord: https://www.writebots.com/discord-bot-token/
-Then, use variables `DISCORD_TOKEN` and  `DISCORD_CHANNEL` to setup Discord.
+First, you have to create a webhook on Discord: https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks
+Extract the webhook's id and token from URL: `https://discord.com/api/webhooks/{ID}/{TOKEN}`
+Then, use variables `DISCORD_WEBHOOK` and `DISCORD_TOKEN` to setup Discord.
 
 You must use a text channel.
 
