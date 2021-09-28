@@ -64,6 +64,7 @@ docker run \
   -e TIME_LIMIT=10 \
   -e FRAG_LIMIT=20 \
   -e CAPTURE_LIMIT=8 \
+  -e MAPS_LIST="overkill,13place,q3dm17,pro-q3tourney2,13tomb,pro-q3dm6,pro-q3dm13,eadm6" \
   -e SLACK_TOKEN=XXXXXXXXXXXXXX \
   -e SLACK_CHANNEL=ABCDEABCDC \
   -e DISCORD_TOKEN=XXXXXXXXXXXXXX \
@@ -93,6 +94,12 @@ For more information about RCON server:
 - https://www.quakearea.com/site/index.php/all-articles/15-tips-and-tricks/59-quake-server-commands
 - http://www.joz3d.net/html/q3console.html
 - http://manual.freeshell.org/lokigames/quake3arena-Help/DedicatedServer.html
+
+#### Edit maps list
+
+The variable `MAPS_LIST` let you choose the automatic maps sequence that the server will run on startup.
+This is a list of comma separated maps id.
+Refer to this file: `maps/get-maps.js` to get the available maps.
 
 #### Get notifications on Slack
 
