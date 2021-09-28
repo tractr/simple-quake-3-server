@@ -20,7 +20,7 @@ class DiscordServiceClass {
 	}
 
 	_getWebhookUrl() {
-		return `https://discord.com/api/webhooks/${discordConfig.id}/${discordConfig.token}`
+		return `https://discord.com/api/webhooks/${discordConfig.id}/${discordConfig.token}`;
 	}
 
 	_registerEvents() {
@@ -34,13 +34,11 @@ class DiscordServiceClass {
 
 	/** @param {string} message */
 	_send(message) {
-		this._discord
-			.post('', { content: message })
-			.catch((error) => {
-				console.error(
-					`Cannot send message to Discord: ${error.toString()}`
-				);
-			});
+		this._discord.post('', { content: message }).catch((error) => {
+			console.error(
+				`Cannot send message to Discord: ${error.toString()}`
+			);
+		});
 	}
 }
 
