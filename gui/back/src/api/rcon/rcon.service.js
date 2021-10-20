@@ -17,7 +17,6 @@ const SettableVariables = [
 
 class RconServiceClass {
 	constructor() {
-		this._client = new Q3RCon(rconConfig);
 		/** @type {EventEmitter} */
 		this._emitter = new EventEmitter();
 		/** @type {string[]} */
@@ -90,13 +89,27 @@ class RconServiceClass {
 		return new Promise((resolve, reject) => {
 			try {
 				this._validateCommand(cmd);
-				this._client.send(cmd, function (response) {
+				this._getClient().send(cmd, function (response) {
 					resolve(response);
 				});
 			} catch (e) {
+				this._destroyClient();
 				reject(e);
 			}
 		});
+	}
+
+	/** Create client if not exists */
+	_getClient() {
+		if (typeof this._client === 'undefined') {
+			this._client = new Q3RCon(rconConfig);
+		}
+		return this._client
+	}
+
+	/** Disconnect and destroy client */
+	_destroyClient() {
+		delete this._client;
 	}
 
 	_mapToArray(rconData) {
