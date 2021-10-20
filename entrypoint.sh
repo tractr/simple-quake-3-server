@@ -31,6 +31,11 @@ if [ -n "${PASSWORD}" ]; then
 fi
 
 #########################################################
+# Copy config template
+rm -f /home/ioq3srv/.q3a/baseq3/server.cfg
+cp /home/ioq3srv/server.tpl.cfg /home/ioq3srv/.q3a/baseq3/server.cfg
+
+#########################################################
 # Configure server from envs
 i=0
 VARS[$i]="RCON_PASSWORD"

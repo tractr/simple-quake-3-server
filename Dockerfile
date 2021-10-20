@@ -69,7 +69,7 @@ COPY --chown=ioq3srv:ioq3srv --from=maps /maps/pk3s /home/ioq3srv/.q3a/baseq3/
 COPY --chown=ioq3srv:ioq3srv --from=maps /maps/images /home/ioq3srv/gui/front/assets/images/
 COPY --chown=ioq3srv:ioq3srv --from=maps /maps/custom.json /home/ioq3srv/gui/back/maps/
 # Copy Q3 server config
-COPY --chown=ioq3srv:ioq3srv q3server/server.cfg /home/ioq3srv/.q3a/baseq3/
+COPY --chown=ioq3srv:ioq3srv q3server/server.tpl.cfg /home/ioq3srv/
 # Config NGINX config
 COPY nginx/default.nginx /etc/nginx/conf.d/default.conf
 
