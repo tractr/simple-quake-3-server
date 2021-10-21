@@ -17,16 +17,13 @@ export class AppComponent implements OnInit, OnDestroy {
 	constructor(private rcon: RconService) {}
 
 	ngOnInit(): void {
-		this.rcon
-			.getStatus()
-			.pipe(takeUntil(this.unsubscribe))
-			.subscribe((res) => {
-				this.rconData = res;
-				const image = this.rconData.currentMap
-					? `${this.rconData.currentMap}.jpg`
-					: 'quake-3-icon.png';
-				this.mapSrc = `./assets/images/${image}`;
-			});
+		this.rcon.status$.pipe(takeUntil(this.unsubscribe)).subscribe((res) => {
+			this.rconData = res;
+			const image = this.rconData.currentMap
+				? `${this.rconData.currentMap}.jpg`
+				: 'quake-3-icon.png';
+			this.mapSrc = `./assets/images/${image}`;
+		});
 	}
 
 	ngOnDestroy(): void {

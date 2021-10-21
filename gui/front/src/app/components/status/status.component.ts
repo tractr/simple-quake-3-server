@@ -56,8 +56,7 @@ export class StatusComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
-		this.rcon
-			.getServerInfo()
+		this.rcon.serverInfo$
 			.pipe(takeUntil(this.unsubscribe))
 			.subscribe((serverInfo) => {
 				this.rconServerInfo = serverInfo;

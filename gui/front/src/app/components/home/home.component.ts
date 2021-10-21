@@ -23,18 +23,14 @@ export class HomeComponent implements OnInit, OnDestroy {
 	constructor(private rcon: RconService) {}
 
 	ngOnInit() {
-		this.rcon
-			.getStatus()
-			.pipe(takeUntil(this.unsubscribe))
-			.subscribe((res) => {
-				this.rconData = res;
-				this.botsCount = res.players.filter(
-					(p) => p.address === '^7bot'
-				).length;
-				this.onlinePlayersCount = res.players.length - this.botsCount;
-			});
-		this.rcon
-			.getServerInfo()
+		this.rcon.status$.pipe(takeUntil(this.unsubscribe)).subscribe((res) => {
+			this.rconData = res;
+			this.botsCount = res.players.filter(
+				(p) => p.address === '^7bot'
+			).length;
+			this.onlinePlayersCount = res.players.length - this.botsCount;
+		});
+		this.rcon.serverInfo$
 			.pipe(takeUntil(this.unsubscribe))
 			.subscribe((res) => {
 				const minPlayers = res.find((r) => r.name === 'bot_minplayers');
@@ -58,5 +54,9 @@ export class HomeComponent implements OnInit, OnDestroy {
 
 	onMinPlayersChanged() {
 		this.rcon.setVar('bot_minplayers', this.minPlayers.toString());
+	}
+
+	onRandomMap() {
+		this.rcon.randomMap();
 	}
 }

@@ -10,19 +10,19 @@ import { StatusComponent } from './components/status/status.component';
 import { HomeComponent } from './components/home/home.component';
 import { RconService } from './services/rcon.service';
 import { HttpClientModule } from '@angular/common/http';
-import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+import { SocketIoConfig, SocketIoModule } from 'ngx-socket-io';
 import { Q3nameDirective } from './directives/q3name.directive';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { RconServerInfoValidatorService } from './services/rcon-server-info-validator.service';
 
 import {
-	MatIconModule,
 	MatButtonModule,
+	MatIconModule,
 	MatInputModule,
-	MatTableModule,
 	MatListModule,
 	MatSelectModule,
+	MatTableModule,
 } from '@angular/material';
 import { MatCardModule } from '@angular/material/card';
 

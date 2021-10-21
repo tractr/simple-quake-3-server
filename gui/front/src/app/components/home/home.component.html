@@ -1,9 +1,14 @@
 <div *ngIf="rconData">
 	<div class="container mb-5">
-		<div class="home-map-name" style="padding-bottom: 30px">
+		<div class="home-map-name text-center mb-5 mt-2">
 			<h2>
 				Playing <strong>{{ rconData.currentMap }}</strong>
 			</h2>
+			<div class="col-12 mt-2">
+				<button mat-button mat-raised-button (click)="onRandomMap()">
+					Shuffle <i class="material-icons">shuffle</i>
+				</button>
+			</div>
 		</div>
 
 		<div class="row mb-5">

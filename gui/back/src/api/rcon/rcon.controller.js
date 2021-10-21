@@ -9,6 +9,12 @@ export function command(req, res) {
 		.catch(handleError(res));
 }
 
+export function randomMap(req, res) {
+	RconService.randomMap()
+		.then(responseWithResult(res))
+		.catch(handleError(res));
+}
+
 export function status(req, res) {
 	RconService.status().then(responseWithResult(res)).catch(handleError(res));
 }

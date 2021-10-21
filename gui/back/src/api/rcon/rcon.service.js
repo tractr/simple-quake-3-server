@@ -17,6 +17,7 @@ const SettableVariables = [
 
 class RconServiceClass {
 	constructor() {
+		this._mapList = (process.env.MAPS_LIST || '').split(',');
 		/** @type {EventEmitter} */
 		this._emitter = new EventEmitter();
 		/** @type {string[]} */
@@ -32,6 +33,10 @@ class RconServiceClass {
 		return this._send('status')
 			.then((data) => this._parseStatus(data))
 			.then((list) => {
+				// Avoid errors
+				if (!(list && list.players)) {
+					return [];
+				}
 				// Extract real player names
 				const players = list.players
 					.filter((p) => p.address !== '^7bot')
@@ -73,6 +78,13 @@ class RconServiceClass {
 		return this.command(`map ${name}`);
 	}
 
+	/** Randomly choose a map from the list define by MAPS_LIST env */
+	randomMap() {
+		const total = this._mapList.length;
+		const index = 1 + Math.floor(Math.random() * total);
+		return this.command(`vstr d${index}`);
+	}
+
 	getEmitter() {
 		return this._emitter;
 	}
@@ -104,7 +116,7 @@ class RconServiceClass {
 		if (typeof this._client === 'undefined') {
 			this._client = new Q3RCon(rconConfig);
 		}
-		return this._client
+		return this._client;
 	}
 
 	/** Disconnect and destroy client */
