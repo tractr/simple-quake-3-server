@@ -97,6 +97,7 @@ ${MAPS_SEQUENCE}
 echo "${MAPS_SEQUENCE}" >> /home/ioq3srv/.q3a/baseq3/server.cfg
 
 # Export global variables
+export MAPS_LIST
 export RCON_PASSWORD
 export FRONTEND_URL
 export SERVER_NAME
