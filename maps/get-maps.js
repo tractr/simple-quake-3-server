@@ -8,7 +8,7 @@ const mapsList = [
         name: "17t6remix",
         title: "The Very End of The Longest Yard",
         type: "dm",
-        map: "http://ws.q3df.org/maps/downloads/17t6remix.pk3",
+        map: "https://quake3-maps.s3.amazonaws.com/17t6remix.pk3",
         image: "http://ws.q3df.org/images/levelshots/512x384/17t6remix.jpg",
         source: "DIXOFT"
     },
@@ -16,7 +16,7 @@ const mapsList = [
         name: "tig_den",
         title: "Tig's Den",
         type: "dm",
-        map: "http://ws.q3df.org/maps/downloads/tig_den.pk3",
+        map: "https://ee.ws.q3df.org/maps/downloads/tig_den.pk3",
         image: "http://ws.q3df.org/images/levelshots/512x384/tig_den.jpg",
         source: "Tigger-oN"
     },
@@ -488,6 +488,22 @@ const mapsList = [
         type: "dm",
         map: "http://sst13.de/map-13out.pk3",
         image: "http://sst13.de/pics/out1.jpg",
+        source: "SST13"
+    },
+    {
+        name: "13hell",
+        title: "Hell's Gate - Extended",
+        type: "dm",
+        map: "https://sst13.de/map-13hell.pk3",
+        image: "https://sst13.de/pics/hell1.jpg",
+        source: "SST13"
+    },
+    {
+        name: "13zone",
+        title: "The Dark Zone - RMX",
+        type: "dm",
+        map: "https://sst13.de/map-13zone.pk3",
+        image: "https://sst13.de/pics/zone1.jpg",
         source: "SST13"
     },
     {
