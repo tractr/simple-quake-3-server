@@ -1,3 +1,9 @@
+.git
+.idea
+node_modules
+
+pak0.pk3
+
 maps/images/*
 !maps/images/.gitkeep
 maps/pk3s/*

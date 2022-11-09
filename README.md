@@ -6,7 +6,7 @@ Before using this repository, you are supposed to own an official copy of Quake 
 
 ## Overview
 
-The purpose of this repository is to provide a plug'n play Quake 3 server including the following features:
+The purpose of this repository is to provide a plug and play Quake 3 server including the following features:
 
 - A Quake 3 dedicated server
 - Custom maps
@@ -18,16 +18,24 @@ This server is wrapped into a Docker image using Alpine.
 
 ## Usage
 
+### pak0 file
+
+The first step is to download the `pak0.pk3` file from your original Quake 3 Arena CD-ROM.
+However, you can also download it from the Internet. For example, you can download it from [here](https://github.com/nrempel/q3-server/raw/master/baseq3/pak0.pk3).
+
+Then you have to bind mount this file into the container: `-v /path/to/pak0.pk3:/home/ioq3srv/ioquake3/baseq3/pak0.pk3`
+
 ### Basic usage
 
 To start the server in order to play on a local network or online, you have to define the server IP or host with the `FRONTEND_URL` variable:
 
 ```shell script
 docker run \
-  -it \
+  -it --rm \
   --name q3server \
   -p 27960:27960/udp \
   -p 80:8080 \
+  -v "${PWD}/pak0.pk3:/home/ioq3srv/ioquake3/baseq3/pak0.pk3:ro" \
   -e FRONTEND_URL=http://192.168.1.20 \
   tractr/simple-quake-3-server
 ```
@@ -51,6 +59,7 @@ docker run \
   --name q3server \
   -p 27960:27960/udp \
   -p 80:8080 \
+  -v ./pak0.pk3:/home/ioq3srv/ioquake3/baseq3/pak0.pk3 \
   -e FRONTEND_URL=http://quake.example.com \
   -e API_AUTH_USER=quaker \
   -e API_AUTH_PASSWORD=q3passwd \
@@ -98,13 +107,13 @@ For more information about RCON server:
 #### Edit maps list
 
 The variable `MAPS_LIST` let you choose the automatic maps sequence that the server will run on startup.
-This is a list of comma separated maps id.
+This is a list of comma separated map ids.
 Refer to this file: `maps/get-maps.js` to get the available maps.
 
 #### Get notifications on Slack
 
 First, you have to create a bot on Slack: https://api.slack.com/bot-users
-Then, use variables `SLACK_TOKEN` and  `SLACK_CHANNEL` to setup Slack.
+Then, use variables `SLACK_TOKEN` and  `SLACK_CHANNEL` to set up Slack.
 
 Don't forget to invite the bot on the channel.
 
@@ -112,17 +121,17 @@ Don't forget to invite the bot on the channel.
 
 First, you have to create a webhook on Discord: https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks
 Extract the webhook's id and token from URL: `https://discord.com/api/webhooks/{ID}/{TOKEN}`
-Then, use variables `DISCORD_WEBHOOK` and `DISCORD_TOKEN` to setup Discord.
+Then, use variables `DISCORD_WEBHOOK` and `DISCORD_TOKEN` to set up Discord.
 
 You must use a text channel.
 
 #### Other environment variables
 
-##### Quake 3 server's name
+##### Quake 3 server name
 
 `SERVER_NAME`: Default `Quakr`.
 
-##### Quake 3 server's welcome message
+##### Quake 3 server welcome message
 
 `SERVER_MOTD`: Default `Welcome to a Simple Quake 3 Server`.
 

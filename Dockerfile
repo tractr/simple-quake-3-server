@@ -1,14 +1,10 @@
-# Step 1: Fetch pak0 file
-FROM cirrusci/wget:latest as pak0
-RUN wget https://github.com/nrempel/q3-server/raw/master/baseq3/pak0.pk3
-
-# Step 2: Fetch custom maps
+# Step 1: Fetch custom maps
 FROM node:10-alpine as maps
 ADD maps /maps
 WORKDIR /maps
 RUN npm i && npm start
 
-# Step 3: Build GUI front-end
+# Step 2: Build GUI front-end
 FROM node:10-alpine as front-builder
 RUN apk --no-cache add git
 ADD gui/front /app
@@ -16,14 +12,14 @@ WORKDIR /app
 RUN npm ci && \
     npm run ng build -- --prod --output-path=dist
 
-# Step 4: Build GUI back-end
+# Step 3: Build GUI back-end
 FROM node:10-alpine as back-builder
 ADD gui/back /app
 WORKDIR /app
 RUN npm ci && \
     npm run build
 
-# Step 5: Build ioquake
+# Step 4: Build ioquake
 # Cloned from jberrenberg/quake3:1.1
 FROM alpine:3.12.1 as ioquake-builder
 
@@ -33,19 +29,12 @@ FROM alpine:3.12.1 as ioquake-builder
 RUN apk --no-cache add curl g++ gcc git make && mkdir -p /tmp/build
 # FETCH INSTALLATION FILES
 RUN curl https://raw.githubusercontent.com/ioquake/ioq3/master/misc/linux/server_compile.sh -o /tmp/build/compile.sh
-RUN curl 'https://files.matchlessgaming.com/misc/quake3-latest-pk3s.zip' \
-      -H 'Upgrade-Insecure-Requests: 1' \
-      -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36' \
-      --compressed \
-      -o /tmp/build/quake3-latest-pk3s.zip
 # NOW THE INSTALLATION
 RUN echo "y" | sh /tmp/build/compile.sh
-RUN ls -la /tmp/build/quake3-latest-pk3s.zip
-RUN unzip /tmp/build/quake3-latest-pk3s.zip -d /tmp/build/
-RUN cp -r /tmp/build/quake3-latest-pk3s/* ~/ioquake3
+COPY pk3/* /root/ioquake3/baseq3/
 
 ######################################
-# Step 6: Build final image
+# Step 5: Build final image
 # Cloned from jberrenberg/quake3:1.1
 FROM alpine:3.12.1
 
@@ -59,7 +48,7 @@ RUN adduser ioq3srv -D
 # Copy ioquake
 COPY --chown=ioq3srv:ioq3srv --from=ioquake-builder /root/ioquake3 /home/ioq3srv/ioquake3
 # Copy pak0
-COPY --chown=ioq3srv:ioq3srv --from=pak0 /pak0.pk3 /home/ioq3srv/ioquake3/baseq3/
+#COPY --chown=ioq3srv:ioq3srv --from=pak0 /pak0.pk3 /home/ioq3srv/ioquake3/baseq3/
 # Copy front-end
 COPY --chown=ioq3srv:ioq3srv --from=front-builder /app/dist /home/ioq3srv/gui/front
 # Copy back-end
