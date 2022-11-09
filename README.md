@@ -23,7 +23,7 @@ This server is wrapped into a Docker image using Alpine.
 The first step is to download the `pak0.pk3` file from your original Quake 3 Arena CD-ROM.
 However, you can also download it from the Internet. For example, you can download it from [here](https://github.com/nrempel/q3-server/raw/master/baseq3/pak0.pk3).
 
-Then you have to bind mount this file into the container: `-v /path/to/pak0.pk3:/home/ioq3srv/ioquake3/baseq3/pak0.pk3`
+Then you have to bind mount this file into the container: `-v /path/to/pak0.pk3:/home/ioq3srv/ioquake3/baseq3/pak0.pk3:ro`
 
 ### Basic usage
 
@@ -35,7 +35,7 @@ docker run \
   --name q3server \
   -p 27960:27960/udp \
   -p 80:8080 \
-  -v "${PWD}/pak0.pk3:/home/ioq3srv/ioquake3/baseq3/pak0.pk3:ro" \
+  -v ${PWD}/pak0.pk3:/home/ioq3srv/ioquake3/baseq3/pak0.pk3:ro \
   -e FRONTEND_URL=http://192.168.1.20 \
   tractr/simple-quake-3-server
 ```
@@ -59,7 +59,7 @@ docker run \
   --name q3server \
   -p 27960:27960/udp \
   -p 80:8080 \
-  -v ./pak0.pk3:/home/ioq3srv/ioquake3/baseq3/pak0.pk3 \
+  -v ${PWD}/pak0.pk3:/home/ioq3srv/ioquake3/baseq3/pak0.pk3:ro \
   -e FRONTEND_URL=http://quake.example.com \
   -e API_AUTH_USER=quaker \
   -e API_AUTH_PASSWORD=q3passwd \
