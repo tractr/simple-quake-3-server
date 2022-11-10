@@ -670,7 +670,58 @@ const mapsList = [
         image: "https://ws.q3df.org/images/levelshots/512x384/eactf1.jpg",
         source: "EADM",
         pk3File: "eadm.pk3"
-    }
+    },
+    {
+        name: "moddm17",
+        title: "The Even Longer Yard",
+        type: "ctf",
+        map: "https://quake3-maps.s3.amazonaws.com/moddm17.pk3",
+        image: "https://lvlworld.com/levels/moddm17/moddm17lg.jpg",
+        source: "LedMan",
+    },
+    {
+        name: "q3wctf1",
+        title: "Bloodlust",
+        type: "ctf",
+        map: "https://quake3-maps.s3.amazonaws.com/maps-q3wctf.pk3",
+        image: "https://lvlworld.com/levels/q3wctf/313495291419776lg.jpg",
+        source: "Zoid & Casey",
+        pk3File: "maps-q3wctf.pk3"
+    },
+    {
+        name: "q3wctf2",
+        title: "Courtyard Conundrum",
+        type: "ctf",
+        map: "https://quake3-maps.s3.amazonaws.com/maps-q3wctf.pk3",
+        image: "https://lvlworld.com/levels/q3wctf/313495291409416lg.jpg",
+        source: "Zoid & Casey",
+        pk3File: "maps-q3wctf.pk3"
+    },
+    {
+        name: "q3wctf3",
+        title: "Finnegan's Revenge",
+        type: "ctf",
+        map: "https://quake3-maps.s3.amazonaws.com/maps-q3wctf.pk3",
+        image: "https://lvlworld.com/levels/q3wctf/q3wctflg.jpg",
+        source: "Zoid & Casey",
+        pk3File: "maps-q3wctf.pk3"
+    },
+    {
+        name: "simple-ctf1",
+        title: "Faces of Quake",
+        type: "ctf",
+        map: "https://quake3-maps.s3.amazonaws.com/simple-ctf1.pk3",
+        image: "https://lvlworld.com/levels/simple-ctf1/simple-ctf11280x960.jpg",
+        source: "r3x.theCat"
+    },
+    {
+        name: "simple-ctf2",
+        title: "The Longest Fall",
+        type: "ctf",
+        map: "https://quake3-maps.s3.amazonaws.com/simple-ctf2.pk3",
+        image: "https://lvlworld.com/levels/simple-ctf2/simple-ctf21280x960.jpg",
+        source: "r3x.theCat"
+    },
 ];
 // ###############################################################
 
