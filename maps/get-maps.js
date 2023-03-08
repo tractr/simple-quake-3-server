@@ -8,7 +8,7 @@ const mapsList = [
         name: "17t6remix",
         title: "The Very End of The Longest Yard",
         type: "dm",
-        map: "https://quake3-maps.s3.amazonaws.com/17t6remix.pk3",
+        map: "https://tractr-lan-games-assets.s3.amazonaws.com/quake-3/maps/17t6remix.pk3",
         image: "http://ws.q3df.org/images/levelshots/512x384/17t6remix.jpg",
         source: "DIXOFT"
     },
@@ -32,7 +32,7 @@ const mapsList = [
         name: "phantq3dm6_mc",
         title: "Geotechnic",
         type: "dm",
-        map: "https://quake3-maps.s3.amazonaws.com/phantq3dm6_mc.pk3",
+        map: "https://tractr-lan-games-assets.s3.amazonaws.com/quake-3/maps/phantq3dm6_mc.pk3",
         image: "https://lvlworld.com/levels/phantq3dm6_mc/phantq3dm6_mclg.jpg",
         source: "Phantazm11"
     },
@@ -40,7 +40,7 @@ const mapsList = [
         name: "phantq3dm4",
         title: "Windsong Keep",
         type: "dm",
-        map: "https://quake3-maps.s3.amazonaws.com/phantq3dm4.pk3",
+        map: "https://tractr-lan-games-assets.s3.amazonaws.com/quake-3/maps/phantq3dm4.pk3",
         image: "https://lvlworld.com/levels/phantq3dm4/phantq3dm4lg.jpg",
         source: "Phantazm11"
     },
@@ -56,7 +56,7 @@ const mapsList = [
         name: "kaos",
         title: "Khaooohs",
         type: "dm",
-        map: "https://quake3-maps.s3.amazonaws.com/kaos.pk3",
+        map: "https://tractr-lan-games-assets.s3.amazonaws.com/quake-3/maps/kaos.pk3",
         image: "https://lvlworld.com/levels/kaos/kaoslg.jpg",
         source: "Vondur"
     },
@@ -72,7 +72,7 @@ const mapsList = [
         name: "obs3dm7",
         title: "The Killing Machine for Q3A",
         type: "dm",
-        map: "https://quake3-maps.s3.amazonaws.com/obs3dm7.pk3",
+        map: "https://tractr-lan-games-assets.s3.amazonaws.com/quake-3/maps/obs3dm7.pk3",
         image: "https://lvlworld.com/levels/obs3dm7/obs3dm7800x600.jpg",
         source: "Obsessed"
     },
@@ -80,7 +80,7 @@ const mapsList = [
         name: "obs3dm5",
         title: "Time To Kill The Pain",
         type: "dm",
-        map: "https://quake3-maps.s3.amazonaws.com/obs3dm5.pk3",
+        map: "https://tractr-lan-games-assets.s3.amazonaws.com/quake-3/maps/obs3dm5.pk3",
         image: "https://lvlworld.com/levels/obs3dm5/obs3dm5800x600.jpg",
         source: "Obsessed"
     },
@@ -88,7 +88,7 @@ const mapsList = [
         name: "obs3dm4",
         title: "Chronophagia",
         type: "dm",
-        map: "https://quake3-maps.s3.amazonaws.com/obs3dm4.pk3",
+        map: "https://tractr-lan-games-assets.s3.amazonaws.com/quake-3/maps/obs3dm4.pk3",
         image: "https://lvlworld.com/levels/obs3dm4/obs3dm4800x600.jpg",
         source: "Obsessed"
     },
@@ -96,10 +96,10 @@ const mapsList = [
         name: "obs3dm3v2",
         title: "The Vomitorium (v2)",
         type: "dm",
-        map: "https://quake3-maps.s3.amazonaws.com/obs3dm3v2.pk3",
+        map: "https://tractr-lan-games-assets.s3.amazonaws.com/quake-3/maps/obs3dm3v2.pk3",
         extra: [
             {
-                url: "https://quake3-maps.s3.amazonaws.com/z_obs3dm3v2.pk3",
+                url: "https://tractr-lan-games-assets.s3.amazonaws.com/quake-3/maps/z_obs3dm3v2.pk3",
                 filename: "z_obs3dm3v2.pk3"
             }
         ],
@@ -118,7 +118,7 @@ const mapsList = [
         name: "q3fig",
         title: "Final Inspiration",
         type: "dm",
-        map: "https://quake3-maps.s3.amazonaws.com/q3fig.pk3",
+        map: "https://tractr-lan-games-assets.s3.amazonaws.com/quake-3/maps/q3fig.pk3",
         image: "https://lvlworld.com/levels/q3fig/q3fig800x600.jpg",
         source: "Gooball"
     },
@@ -675,7 +675,7 @@ const mapsList = [
         name: "moddm17",
         title: "The Even Longer Yard",
         type: "ctf",
-        map: "https://quake3-maps.s3.amazonaws.com/moddm17.pk3",
+        map: "https://tractr-lan-games-assets.s3.amazonaws.com/quake-3/maps/moddm17.pk3",
         image: "https://lvlworld.com/levels/moddm17/moddm17lg.jpg",
         source: "LedMan",
     },
@@ -683,7 +683,7 @@ const mapsList = [
         name: "q3wctf1",
         title: "Bloodlust",
         type: "ctf",
-        map: "https://quake3-maps.s3.amazonaws.com/maps-q3wctf.pk3",
+        map: "https://tractr-lan-games-assets.s3.amazonaws.com/quake-3/maps/maps-q3wctf.pk3",
         image: "https://lvlworld.com/levels/q3wctf/313495291419776lg.jpg",
         source: "Zoid & Casey",
         pk3File: "maps-q3wctf.pk3"
@@ -692,7 +692,7 @@ const mapsList = [
         name: "q3wctf2",
         title: "Courtyard Conundrum",
         type: "ctf",
-        map: "https://quake3-maps.s3.amazonaws.com/maps-q3wctf.pk3",
+        map: "https://tractr-lan-games-assets.s3.amazonaws.com/quake-3/maps/maps-q3wctf.pk3",
         image: "https://lvlworld.com/levels/q3wctf/313495291409416lg.jpg",
         source: "Zoid & Casey",
         pk3File: "maps-q3wctf.pk3"
@@ -701,7 +701,7 @@ const mapsList = [
         name: "q3wctf3",
         title: "Finnegan's Revenge",
         type: "ctf",
-        map: "https://quake3-maps.s3.amazonaws.com/maps-q3wctf.pk3",
+        map: "https://tractr-lan-games-assets.s3.amazonaws.com/quake-3/maps/maps-q3wctf.pk3",
         image: "https://lvlworld.com/levels/q3wctf/q3wctflg.jpg",
         source: "Zoid & Casey",
         pk3File: "maps-q3wctf.pk3"
@@ -710,7 +710,7 @@ const mapsList = [
         name: "simple-ctf1",
         title: "Faces of Quake",
         type: "ctf",
-        map: "https://quake3-maps.s3.amazonaws.com/simple-ctf1.pk3",
+        map: "https://tractr-lan-games-assets.s3.amazonaws.com/quake-3/maps/simple-ctf1.pk3",
         image: "https://lvlworld.com/levels/simple-ctf1/simple-ctf11280x960.jpg",
         source: "r3x.theCat"
     },
@@ -718,7 +718,7 @@ const mapsList = [
         name: "simple-ctf2",
         title: "The Longest Fall",
         type: "ctf",
-        map: "https://quake3-maps.s3.amazonaws.com/simple-ctf2.pk3",
+        map: "https://tractr-lan-games-assets.s3.amazonaws.com/quake-3/maps/simple-ctf2.pk3",
         image: "https://lvlworld.com/levels/simple-ctf2/simple-ctf21280x960.jpg",
         source: "r3x.theCat"
     },
